@@ -13,6 +13,16 @@ public class RoomLoader : MonoBehaviour {
     public GameObject RoomFront;
     public GameObject RoomBack;
 
+    [HideInInspector] public GameObject CloneLeft;
+    [HideInInspector] public GameObject CloneRight;
+    [HideInInspector] public GameObject CloneFront;
+    [HideInInspector] public GameObject CloneBack;
+
+    public Vector3 PlacementLeft;
+    public Vector3 PlacementRight;
+    public Vector3 PlacementFront;
+    public Vector3 PlacementBack;
+
     public Direction leftDirection;
     public Direction rightDirection;
     public Direction frontDirection;
@@ -21,6 +31,7 @@ public class RoomLoader : MonoBehaviour {
     public GameObject PreviousRoom;
 
     protected Direction orientation;
+
 
     public enum Direction
     {
@@ -49,21 +60,38 @@ public class RoomLoader : MonoBehaviour {
                 Debug.Log(orientation);
 
                 if (RoomLeft != null)
-                    PlaceRoom(RoomLeft, Direction.Left, leftDirection);             
-                
+                {
+                    CloneLeft = Instantiate(RoomLeft);
+                    PlaceRoom(CloneLeft, PlacementLeft, leftDirection);
+                }     
 
                 if (RoomRight != null)
-                    PlaceRoom(RoomRight, Direction.Right, rightDirection);
+                {
+                    CloneRight = Instantiate(RoomRight);
+                    PlaceRoom(CloneRight, PlacementRight, rightDirection);
+                }
+                   
 
                 if (RoomFront != null)
-                    PlaceRoom(RoomFront, Direction.Front, frontDirection);
+                {
+                    CloneFront = Instantiate(RoomFront);
+                    PlaceRoom(CloneFront, PlacementFront, frontDirection);
+                }
+                   
 
                 if (RoomBack != null)
-                    PlaceRoom(RoomBack, Direction.Back, backDirection);
+                {
+                    CloneBack = Instantiate(RoomBack);
+                    PlaceRoom(CloneBack, PlacementBack, backDirection);
+                }
+                    
 
                 if (PreviousRoom != null)
-                    PreviousRoom.transform.position = transform.position + new Vector3(0f, -20f, 0f);
-                            }
+                {
+                    DestroyPreviousRooms();
+                }
+                    
+            }
     }
 
     private void OnTriggerExit(Collider other)
@@ -71,8 +99,12 @@ public class RoomLoader : MonoBehaviour {
         Loaded = false;
     }
 
-    protected void PlaceRoom(GameObject room, Direction placement, Direction direction)
-    {       
+    protected void PlaceRoom(GameObject room, Vector3 placement, Direction direction)
+    {
+
+        RoomLoader loader = room.GetComponent<RoomLoader>();
+
+
         switch (direction)
         {
             case Direction.Front: room.transform.eulerAngles = transform.eulerAngles + new Vector3(0,180,0); break;
@@ -82,61 +114,35 @@ public class RoomLoader : MonoBehaviour {
             default: Debug.LogWarning("Mauvaise orientation de la salle passée en switch"); break;
         }
 
-        switch (placement)
+        switch (orientation)
         {
-            case Direction.Front: room.transform.position =  transform.position + ComputeTranslationFront(); break;
-            case Direction.Right: room.transform.position = transform.position + ComputeTranslationRight(); break;
-            case Direction.Back: room.transform.position = transform.position + ComputeTranslationBack(); break;
-            case Direction.Left: room.transform.position = transform.position + ComputeTranslationLeft(); break;
+            case Direction.Front: room.transform.position = transform.position + new Vector3(placement.x, placement.y, placement.z); break;
+            case Direction.Right: room.transform.position = transform.position + new Vector3(-placement.z, placement.y, placement.x); break;
+            case Direction.Back: room.transform.position = transform.position + new Vector3(-placement.x, placement.y, -placement.z); break;
+            case Direction.Left: room.transform.position = transform.position + new Vector3(placement.z, placement.y, -placement.x); break;
             default: Debug.LogWarning("Mauvaise orientation de la salle passée en switch"); break;
         }
+
+        if (loader != null)
+            loader.PreviousRoom = gameObject;
     }
 
-    private Vector3 ComputeTranslationFront()
+    protected void DestroyPreviousRooms()
     {
-        switch (orientation)
+        RoomLoader previousLoarder = PreviousRoom.GetComponent<RoomLoader>();
+        if(previousLoarder != null)
         {
-            case Direction.Front: return new Vector3(0,0,10.1f); break;
-            case Direction.Right: return new Vector3(10.1f, 0, 0); break;
-            case Direction.Back: return new Vector3(0, 0, -10.1f); break;
-            case Direction.Left: return new Vector3(-10.1f, 0, 0); break;
-            default: return new Vector3(0,0,0);
+            if(previousLoarder.CloneFront != gameObject)
+                Destroy(previousLoarder.CloneFront);
+
+            if (previousLoarder.CloneRight != gameObject)
+                Destroy(previousLoarder.CloneRight);
+            if (previousLoarder.CloneBack != gameObject)
+                Destroy(previousLoarder.CloneBack);
+            if (previousLoarder.CloneLeft != gameObject)
+                Destroy(previousLoarder.CloneLeft);
         }
+        Destroy(PreviousRoom);
     }
 
-    private Vector3 ComputeTranslationRight()
-    {
-        switch (orientation)
-        {
-            case Direction.Left: return new Vector3(0, 0, 10.1f); break;
-            case Direction.Front: return new Vector3(10.1f, 0, 0); break;
-            case Direction.Right: return new Vector3(0, 0, -10.1f); break;
-            case Direction.Back: return new Vector3(-10.1f, 0, 0); break;
-            default: return new Vector3(0, 0, 0);
-        }
-    }
-
-    private Vector3 ComputeTranslationBack()
-    {
-        switch (orientation)
-        {
-            case Direction.Back: return new Vector3(0, 0, 10.1f); break;
-            case Direction.Left: return new Vector3(10.1f, 0, 0); break;
-            case Direction.Front: return new Vector3(0, 0, -10.1f); break;
-            case Direction.Right: return new Vector3(-10.1f, 0, 0); break;
-            default: return new Vector3(0, 0, 0);
-        }
-    }
-
-    private Vector3 ComputeTranslationLeft()
-    {
-        switch (orientation)
-        {
-            case Direction.Right: return new Vector3(0, 0, 10.1f); break;
-            case Direction.Front: return new Vector3(10.1f, 0, 0); break;
-            case Direction.Left: return new Vector3(0, 0, -10.1f); break;
-            case Direction.Back: return new Vector3(-10.1f, 0, 0); break;
-            default: return new Vector3(0, 0, 0);
-        }
-    }
 }
