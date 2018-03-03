@@ -16,8 +16,18 @@ public class MenuPrincipal : MonoBehaviour
     [Header("Nom de la scene du niveau :")]
     public string NomMenuPrincipal;
 
+    [Header("Pannel Menu :")]
+    public GameObject AffichePanelMenuPrincipal;
+
+    [Header("Pannel Controle :")]
+    public GameObject AffichePanelControle;
+    private bool AfficheControleEnCour;
+
     void Awake()
     {
+        AffichePanelMenuPrincipal.SetActive(true);
+        AffichePanelControle.SetActive(false);
+        AfficheControleEnCour = false;
         BoutonSelectionner = 0;
     }
 
@@ -29,10 +39,19 @@ public class MenuPrincipal : MonoBehaviour
 
     void Update()
     {
-        DeplacementBouton();
-        if (Input.GetButtonDown("Interaction") || Input.GetButtonDown("Submit"))
+        if (!AfficheControleEnCour)
         {
-            ActiveBouton(BoutonSelectionner);
+            DeplacementBouton();
+            if (Input.GetButtonDown("Interaction") || Input.GetButtonDown("Submit"))
+            {
+                ActiveBouton(BoutonSelectionner);
+            }
+        } else
+        {
+            if (Input.GetButtonDown("Interaction") || Input.GetButtonDown("Submit"))
+            {
+                RetourMenuPrincipal();
+            }
         }
     }
 
@@ -51,12 +70,12 @@ public class MenuPrincipal : MonoBehaviour
 
     private void DeplacementBouton()
     {
-        if (Input.GetButtonDown("Horizontal") && Input.GetAxisRaw("Horizontal") > 0 || Input.GetButtonDown("Vertical") && Input.GetAxisRaw("Vertical") > 0)
+        if (Input.GetButtonDown("Horizontal") && Input.GetAxisRaw("Horizontal") > 0 || Input.GetButtonDown("Vertical") && Input.GetAxisRaw("Vertical") < 0)
         {
             BoutonSelectionner++;
             BoutonSelectionner = CheckConteur(BoutonSelectionner);
         }
-        else if (Input.GetButtonDown("Horizontal") && Input.GetAxisRaw("Horizontal") < 0 || Input.GetButtonDown("Vertical") && Input.GetAxisRaw("Vertical") < 0)
+        else if (Input.GetButtonDown("Horizontal") && Input.GetAxisRaw("Horizontal") < 0 || Input.GetButtonDown("Vertical") && Input.GetAxisRaw("Vertical") > 0)
         {
             BoutonSelectionner--;
             BoutonSelectionner = CheckConteur(BoutonSelectionner);
@@ -97,6 +116,21 @@ public class MenuPrincipal : MonoBehaviour
     private void ChargerLaPartie()
     {
         SceneManager.LoadScene(NomMenuPrincipal);
+    }
+
+    private void AfficheControle()
+    {
+        AfficheControleEnCour = true;
+        AffichePanelMenuPrincipal.SetActive(false);
+        AffichePanelControle.SetActive(true);
+    }
+
+    private void RetourMenuPrincipal()
+    {
+        AfficheControleEnCour = false;
+        AffichePanelMenuPrincipal.SetActive(true);
+        AffichePanelControle.SetActive(false);
+        BoutonSelectionner = 0;
     }
 
     private void QuitterLeJeu()
