@@ -9,15 +9,12 @@ public class PlayerCheckEnnemis : MonoBehaviour {
 
     [Header("Distance zones Calme : ")]
     public float calmDistance;
-    public float EnnemySpeedCalm;
 
-    [Header("Distance zones Enemy Proche && Vitesse: ")]
+    [Header("Distance zones Enemy Proche : ")]
     public float alertDistance;
-    public float EnnemySpeedAlert;
 
     [Header("Distance zones Danger : ")]
     public float dangerDistance;
-    public float EnnemySpeedDanger;
 
     [Header("Musique d'ennemis proche : ")]
     public AudioClip CloseEnemy;
@@ -56,8 +53,6 @@ public class PlayerCheckEnnemis : MonoBehaviour {
             inAlertZone = false;
             inDangerZone = false;
 
-            Ennemis.GetComponent<EnnemisControl>().SetSpeed(5f);
-
             audioSource.Stop();
         }
 
@@ -70,8 +65,6 @@ public class PlayerCheckEnnemis : MonoBehaviour {
             inCalmZone = false;
             inAlertZone = true;
             inDangerZone = false;
-
-            Ennemis.GetComponent<EnnemisControl>().SetSpeed(EnnemySpeedAlert);
 
             audioSource.PlayOneShot(CloseEnemy);
             audioSource.volume = 0;
@@ -88,8 +81,6 @@ public class PlayerCheckEnnemis : MonoBehaviour {
             inAlertZone = false;
             inDangerZone = true;
 
-            Ennemis.GetComponent<EnnemisControl>().SetSpeed(5f);
-
             audioSource.loop = true;
             audioSource.PlayOneShot(Chase);
             audioSource.volume = 0;
@@ -102,7 +93,7 @@ public class PlayerCheckEnnemis : MonoBehaviour {
         if(audioSource.volume < maxVolume)
         {
             audioSource.volume += speedVolume;
-            Invoke("FadeIn", 1f);
+            Invoke("FadeIn", 0f);
         }
     }
 
@@ -110,8 +101,8 @@ public class PlayerCheckEnnemis : MonoBehaviour {
     {
         if (audioSource.volume > 0)
         {
-            audioSource.volume -= speedVolume;
-            Invoke("FadeOut", 1f);
+            audioSource.volume += speedVolume;
+			Invoke ("FadeOut", 0f);
         }
     }
 }
