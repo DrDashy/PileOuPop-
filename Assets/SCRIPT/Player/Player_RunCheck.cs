@@ -68,9 +68,6 @@ public class Player_RunCheck : MonoBehaviour {
         {
             FadeIn();
             Invoke("CheckRun", 1f);
-        } else
-        {
-            CurrentTimeWhileRun = 0;
         }
     }
 
@@ -84,7 +81,7 @@ public class Player_RunCheck : MonoBehaviour {
         }
         else
         {
-            audioSource.Stop();
+            // audioSource.Stop();
         }
     }
 
@@ -93,9 +90,6 @@ public class Player_RunCheck : MonoBehaviour {
         if (audioSource.volume < maxVolume)
         {
             audioSource.volume += speedVolume;
-        } else
-        {
-            audioSource.volume = 1f;
         }
     }
 
@@ -104,9 +98,6 @@ public class Player_RunCheck : MonoBehaviour {
         if (audioSource.volume > 0)
         {
             audioSource.volume -= speedVolume;
-        } else
-        {
-            audioSource.volume = 0;
         }
     }
 
