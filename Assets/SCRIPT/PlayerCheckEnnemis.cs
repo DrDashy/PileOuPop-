@@ -103,7 +103,7 @@ public class PlayerCheckEnnemis : MonoBehaviour {
         if (audioSource.volume > 0)
         {
             audioSource.volume += speedVolume;
-            Invoke("FadeOut",0f)
+			Invoke ("FadeOut", 0f);
         }
     }
 }
