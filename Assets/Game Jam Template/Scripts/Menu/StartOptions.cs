@@ -44,13 +44,13 @@ public class StartOptions : MonoBehaviour {
 	{
 		//If changeMusicOnStart is true, fade out volume of music group of AudioMixer by calling FadeDown function of PlayMusic
 		//To change fade time, change length of animation "FadeToColor"
-		if (menuSettingsData.musicLoopToChangeTo != null) 
+		if (changeMusicOnStart) 
 		{
 			playMusic.FadeDown(menuSettingsData.menuFadeTime);
 		}
 
 		//If changeScenes is true, start fading and change scenes halfway through animation when screen is blocked by FadeImage
-		if (menuSettingsData.nextSceneIndex != 0) 
+		if (changeScenes) 
 		{
 			//Use invoke to delay calling of LoadDelayed by half the length of fadeColorAnimationClip
 			Invoke ("LoadDelayed", menuSettingsData.menuFadeTime);
