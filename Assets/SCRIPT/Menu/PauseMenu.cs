@@ -69,6 +69,8 @@ public class PauseMenu : MonoBehaviour {
         isPaused = true;
 		// Set time.timescale to 0, this will cause animations and physics to stop updating
 		Time.timeScale = 0;
+        // Desactive tous les sons
+        AudioListener.pause = true;
         // Anule les mouvements du joueur
 		Player.GetComponent<FirstPersonController>().enabled = false;
         // Active la fenêtre de menu
@@ -82,6 +84,8 @@ public class PauseMenu : MonoBehaviour {
 		isPaused = false;
 		// Set time.timescale to 1, this will cause animations and physics to continue updating at regular speed
 		Time.timeScale = 1;
+        // Active tous les sons
+        AudioListener.pause = false;
         // Active les mouvements du joueur
         Player.GetComponent<FirstPersonController>().enabled = true;
         // Desactive la fenêtre de menu
