@@ -349,6 +349,22 @@ Prefab:
       propertyPath: sceneToStart
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11488040, guid: 45616935e4fe10f48b62da1347801a16, type: 2}
+      propertyPath: changeMusicOnStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11488040, guid: 45616935e4fe10f48b62da1347801a16, type: 2}
+      propertyPath: changeScenes
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11423466, guid: 45616935e4fe10f48b62da1347801a16, type: 2}
+      propertyPath: mainMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: a3ad8962a2bc66c48b70ee6b60e6e128, type: 3}
+    - target: {fileID: 159020, guid: 45616935e4fe10f48b62da1347801a16, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45616935e4fe10f48b62da1347801a16, type: 2}
   m_IsPrefabParent: 0
