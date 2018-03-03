@@ -8,6 +8,8 @@ using UnityEngine;
 /// </summary>
 public class RoomLoader : MonoBehaviour {
 
+    public Vector2 RoomSize;
+
     public GameObject RoomLeft;
     public GameObject RoomRight;
     public GameObject RoomFront;
@@ -21,6 +23,7 @@ public class RoomLoader : MonoBehaviour {
     public GameObject PreviousRoom;
 
     protected Direction orientation;
+
 
     public enum Direction
     {
@@ -63,7 +66,7 @@ public class RoomLoader : MonoBehaviour {
 
                 if (PreviousRoom != null)
                     PreviousRoom.transform.position = transform.position + new Vector3(0f, -20f, 0f);
-                            }
+            }
     }
 
     private void OnTriggerExit(Collider other)
