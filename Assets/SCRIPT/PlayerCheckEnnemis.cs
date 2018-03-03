@@ -60,21 +60,22 @@ public class PlayerCheckEnnemis : MonoBehaviour {
         if (Vector3.Distance(Ennemis.transform.position, Player.transform.position) <= calmDistance && Vector3.Distance(Ennemis.transform.position, Player.transform.position) > dangerDistance && !inAlertZone)
         {
             audioSource.Stop();
-            StartCoroutine(FadeOut());
+            FadeOut();
 
             inCalmZone = false;
             inAlertZone = true;
             inDangerZone = false;
 
             audioSource.PlayOneShot(CloseEnemy);
-            StartCoroutine(FadeIn());
+            audioSource.volume = 0;
+            FadeIn();
         }
 
         // Alert Zone
         if (Vector3.Distance(Ennemis.transform.position, Player.transform.position) < dangerDistance && !inDangerZone)
         {
             audioSource.Stop();
-            StartCoroutine(FadeOut());
+            FadeOut();
 
             inCalmZone = false;
             inAlertZone = false;
@@ -82,27 +83,27 @@ public class PlayerCheckEnnemis : MonoBehaviour {
 
             audioSource.loop = true;
             audioSource.PlayOneShot(Chase);
-            StartCoroutine(FadeIn());
+            audioSource.volume = 0;
+            FadeIn();
         }
     }
 
-    IEnumerator FadeIn()
+    void FadeIn()
     {
-        audioSource.volume = 0;
+        
 
-        while(audioSource.volume < maxVolume)
+        if(audioSource.volume < maxVolume)
         {
             audioSource.volume += speedVolume;
         }
-        yield return new WaitForSeconds(0);
     }
 
-    IEnumerator FadeOut()
+    void FadeOut()
     {
-        while (audioSource.volume > 0)
+        if (audioSource.volume > 0)
         {
             audioSource.volume += speedVolume;
+            Invoke("FadeOut",0f)
         }
-        yield return new WaitForSeconds(0);
     }
 }

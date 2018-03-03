@@ -1972,8 +1972,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1229780065}
   Ennemis: {fileID: 1123212417}
-  calmDistance: 30
+  calmDistance: 50
+  alertDistance: 30
+  dangerDistance: 20
+  CloseEnemy: {fileID: 0}
   Chase: {fileID: 8300000, guid: 35484cab05671cf4a936e12e9b0306f7, type: 3}
+  maxVolume: 1
+  minVolume: 0
+  speedVolume: 0.1
   audioSource: {fileID: 1292368038}
 --- !u!82 &1292368038
 AudioSource:
