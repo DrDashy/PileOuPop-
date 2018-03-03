@@ -771,7 +771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f9da022a1d15b44bbed92b7463a16fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DistanceActivation: 2
+  DistanceActivation: 3
   InteractifLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -1138,6 +1138,11 @@ Prefab:
     - target: {fileID: 1849453166246390, guid: 13c463c13ed252e499d3d42681b39114, type: 2}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 95961806753003296, guid: 13c463c13ed252e499d3d42681b39114,
+        type: 2}
+      propertyPath: m_CullingMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 13c463c13ed252e499d3d42681b39114, type: 2}

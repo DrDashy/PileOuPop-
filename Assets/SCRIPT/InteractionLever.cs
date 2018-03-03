@@ -17,6 +17,7 @@ public class InteractionLever : MonoBehaviour, IActivable {
 
 	public void Activate()
 	{
+		Debug.Log ("test");
 		if (this.GetComponent<Animator> ().GetBool("isActivated") == false) {
 			ActivateLever ();
 		} else {
@@ -32,16 +33,18 @@ public class InteractionLever : MonoBehaviour, IActivable {
 
 	public void ActivateLever()
 	{
+		Debug.Log ("activé");
 		GetComponent<Animator> ().SetBool ("isActivated", true);
-		objetActivable.Activate ();
+		//objetActivable.Activate ();
 	}
 
 
 
 	public void DesactivateLever()
 	{
+		Debug.Log ("desactivé");
 		GetComponent<Animator> ().SetBool ("isActivated", false);
-		objetActivable.Activate ();
+		//objetActivable.Activate ();
 	}
 		
 }
