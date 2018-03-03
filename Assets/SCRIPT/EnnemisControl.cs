@@ -15,7 +15,6 @@ public class EnnemisControl : MonoBehaviour {
     void Start () {
         Player = GameObject.FindGameObjectWithTag("Player");
         anim = GetComponent<Animator>();
-        audioSource.GetComponent<AudioSource>();
     }
 	
 	void FixedUpdate () {
