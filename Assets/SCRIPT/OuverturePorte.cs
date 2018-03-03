@@ -3,28 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class OuverturePorte : MonoBehaviour, IActivable {
-	public GameObject porteVoisine;
+	public OuverturePorte porteVoisine;
+    public RoomLoader loader;
+
+    protected bool IsOpen;
 
 	void Start()
 	{
-
-	}
-
-	void Update()
-	{
-		
+        IsOpen = false;
+        if (loader == null)
+            Debug.Log("Pas de loader détecté");
 	}
 
 	public void Activate()
 	{
-		if (this.GetComponent<Animator> ().GetBool("isOpen") == false) {
-			OpenDoor (this.gameObject);
-			OpenDoor (porteVoisine);
-		} else {
-			CloseDoor (this.gameObject);
-			CloseDoor (porteVoisine);
-		}
-
+		if (!IsOpen) {
+			OpenDoor();
+            if(porteVoisine!= null)
+                 porteVoisine.OpenDoor();
+		} 
 	}
 
 	public void Highlight()
@@ -32,24 +29,35 @@ public class OuverturePorte : MonoBehaviour, IActivable {
 		
 	}
 
-	public void OpenDoor(GameObject porte)
+	public void OpenDoor()
 	{
-		porte.GetComponent<Animator> ().SetBool ("isOpen", true);
-		porte.GetComponent<BoxCollider> ().isTrigger = true;
+        IsOpen = true;
+		GetComponent<Animator> ().SetBool ("isOpen", true);
+		GetComponent<BoxCollider> ().isTrigger = true;
 	}
 
 
 
-	public void CloseDoor(GameObject porte)
+	public void CloseDoor()
 	{
-		porte.GetComponent<Animator> ().SetBool ("isOpen", false);
-		porte.GetComponent<BoxCollider> ().isTrigger = false;
+        Debug.Log("Closing");
+        IsOpen = false;
+        GetComponent<Animator> ().SetBool ("isOpen", false);
+		GetComponent<BoxCollider> ().isTrigger = false;
+        if (loader.isInTheRoom)
+        {
+            Debug.Log("Loading");
+            loader.LoadRooms();            
+        }
+            
 	}
 
 	public void OnTriggerExit()
 	{
-		this.GetComponent<Animator> ().SetBool ("isOpen", false);
-		this.GetComponent<BoxCollider> ().isTrigger = false;
+        Debug.Log("Quit coolider door");
+        CloseDoor();
+        if (porteVoisine != null)
+            porteVoisine.CloseDoor();
 	}
 
 }
