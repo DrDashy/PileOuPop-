@@ -51,12 +51,12 @@ public class MenuPrincipal : MonoBehaviour
 
     private void DeplacementBouton()
     {
-        if (Input.GetButtonDown("Horizontal") && Input.GetAxisRaw("Horizontal") > 0)
+        if (Input.GetButtonDown("Horizontal") && Input.GetAxisRaw("Horizontal") > 0 || Input.GetButtonDown("Vertical") && Input.GetAxisRaw("Vertical") > 0)
         {
             BoutonSelectionner++;
             BoutonSelectionner = CheckConteur(BoutonSelectionner);
         }
-        else if (Input.GetButtonDown("Horizontal") && Input.GetAxisRaw("Horizontal") < 0)
+        else if (Input.GetButtonDown("Horizontal") && Input.GetAxisRaw("Horizontal") < 0 || Input.GetButtonDown("Vertical") && Input.GetAxisRaw("Vertical") < 0)
         {
             BoutonSelectionner--;
             BoutonSelectionner = CheckConteur(BoutonSelectionner);
