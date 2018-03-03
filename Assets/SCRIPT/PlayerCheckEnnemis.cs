@@ -7,17 +7,42 @@ public class PlayerCheckEnnemis : MonoBehaviour {
     public GameObject Player;
     public GameObject Ennemis;
 
-    public float calmDistance = 80;
+    [Header("Distance zones Calme : ")]
+    public float calmDistance;
 
-    public List<AudioClip> Chase;
+    [Header("Distance zones Enemy Proche : ")]
+    public float alertDistance;
+
+    [Header("Distance zones Danger : ")]
+    public float dangerDistance;
+
+    [Header("Musique d'ennemis proche : ")]
+    public AudioClip CloseEnemy;
+
+    [Header("Musique de course poursuite : ")]
+    public AudioClip Chase;
+
+    [Header("Volume max du son : ")]
+    public float maxVolume;
+
+    [Header("Volume min du son : ")]
+    public float minVolume;
+
+    [Header("Vitesse de FadeIn et FadeOut du son : ")]
+    public float speedVolume;
 
     private bool inCalmZone = true;
     private bool inAlertZone = false;
+    private bool inDangerZone = false;
+
+    [Header("AudioSource : ")]
+    public AudioSource audioSource;
 
 	// Use this for initialization
 	void Start () {
-        // SoundManagerScript.PlayMusic(Player, Chase[0]);
-	}
+        audioSource.GetComponent<AudioSource>();
+        audioSource.loop = true;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -26,15 +51,59 @@ public class PlayerCheckEnnemis : MonoBehaviour {
         {
             inCalmZone = true;
             inAlertZone = false;
-            // SoundManagerScript.PlayMusic(Player, Chase[0]);
+            inDangerZone = false;
+
+            audioSource.Stop();
         }
 
         // Alert Zone
-        if (Vector3.Distance(Ennemis.transform.position, Player.transform.position) <= calmDistance && !inAlertZone)
+        if (Vector3.Distance(Ennemis.transform.position, Player.transform.position) <= calmDistance && Vector3.Distance(Ennemis.transform.position, Player.transform.position) > dangerDistance && !inAlertZone)
         {
+            audioSource.Stop();
+            FadeOut();
+
             inCalmZone = false;
             inAlertZone = true;
-            SoundManagerScript.PlayMusic(Player, Chase[0]);
+            inDangerZone = false;
+
+            audioSource.PlayOneShot(CloseEnemy);
+            audioSource.volume = 0;
+            FadeIn();
+        }
+
+        // Alert Zone
+        if (Vector3.Distance(Ennemis.transform.position, Player.transform.position) < dangerDistance && !inDangerZone)
+        {
+            audioSource.Stop();
+            FadeOut();
+
+            inCalmZone = false;
+            inAlertZone = false;
+            inDangerZone = true;
+
+            audioSource.loop = true;
+            audioSource.PlayOneShot(Chase);
+            audioSource.volume = 0;
+            FadeIn();
+        }
+    }
+
+    void FadeIn()
+    {
+        
+
+        if(audioSource.volume < maxVolume)
+        {
+            audioSource.volume += speedVolume;
+        }
+    }
+
+    void FadeOut()
+    {
+        if (audioSource.volume > 0)
+        {
+            audioSource.volume += speedVolume;
+            Invoke("FadeOut",0f)
         }
     }
 }
