@@ -144,7 +144,7 @@ public class PauseMenu : MonoBehaviour {
         }
     }
 
-    public void QuitterDepuisMenuPause()
+    private void QuitterDepuisMenuPause()
     {
         SceneManager.LoadScene(NomMenuPrincipal);
     }
