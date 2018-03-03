@@ -1,0 +1,210 @@
+fileFormatVersion: 2
+guid: ffd78c26e59f9564288ea3ad523f1cea
+timeCreated: 1520085483
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Bone
+    100004: Bone.001
+    100006: Bone.001_end
+    100008: cerveau
+    100010: cupola
+    100012: cuve2
+    100014: cuve2.001
+    100016: Cylinder.004
+    100018: Cylinder.006
+    100020: exit
+    100022: //RootNode
+    100024: microscope
+    100026: support
+    100028: tuyaud
+    100030: tuyaudBreak
+    100032: tuyaudCurve
+    100034: tuyaudCurve2
+    100036: tuyaudCurve3
+    100038: tuyaudEnd
+    400000: Armature
+    400002: Bone
+    400004: Bone.001
+    400006: Bone.001_end
+    400008: cerveau
+    400010: cupola
+    400012: cuve2
+    400014: cuve2.001
+    400016: Cylinder.004
+    400018: Cylinder.006
+    400020: exit
+    400022: //RootNode
+    400024: microscope
+    400026: support
+    400028: tuyaud
+    400030: tuyaudBreak
+    400032: tuyaudCurve
+    400034: tuyaudCurve2
+    400036: tuyaudCurve3
+    400038: tuyaudEnd
+    2100000: glass
+    2100002: No Name
+    2100004: metal1
+    2100006: Material.001
+    2100008: Material.006
+    2100010: Material.008
+    2100012: Material.007
+    2100014: Material.003
+    2100016: Material.004
+    2300000: cerveau
+    2300002: cupola
+    2300004: cuve2
+    2300006: cuve2.001
+    2300008: Cylinder.006
+    2300010: exit
+    2300012: microscope
+    2300014: support
+    2300016: tuyaud
+    2300018: tuyaudBreak
+    2300020: tuyaudCurve
+    2300022: tuyaudCurve2
+    2300024: tuyaudCurve3
+    2300026: tuyaudEnd
+    3300000: cerveau
+    3300002: cupola
+    3300004: cuve2
+    3300006: cuve2.001
+    3300008: Cylinder.006
+    3300010: exit
+    3300012: microscope
+    3300014: support
+    3300016: tuyaud
+    3300018: tuyaudBreak
+    3300020: tuyaudCurve
+    3300022: tuyaudCurve2
+    3300024: tuyaudCurve3
+    3300026: tuyaudEnd
+    4300000: cuve2.001
+    4300002: cerveau
+    4300004: cupola
+    4300006: support
+    4300008: microscope
+    4300010: tuyaudBreak
+    4300012: exit
+    4300014: Cylinder.004
+    4300016: tuyaudEnd
+    4300018: Cylinder.006
+    4300020: cuve2
+    4300022: tuyaud
+    4300024: tuyaudCurve3
+    4300026: tuyaudCurve2
+    4300028: tuyaudCurve
+    7400000: machine1
+    9500000: //RootNode
+    13700000: Cylinder.004
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: machine1
+      takeName: Armature|ArmatureAction
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
