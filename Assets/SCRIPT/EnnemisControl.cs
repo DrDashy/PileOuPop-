@@ -6,16 +6,35 @@ public class EnnemisControl : MonoBehaviour {
 
     private GameObject Player;
 
+    private Animator anim;
+
     [Header("Vitesse de déplacement :")]
     public float Speed;
 
     // Use this for initialization
     void Start () {
         Player = GameObject.FindGameObjectWithTag("Player");
+        anim = GetComponent<Animator>();
+        audioSource.GetComponent<AudioSource>();
     }
 	
 	void FixedUpdate () {
         MoveToPlayer();
+    }
+
+    public void SetSpeed(float NewSpeed)
+    {
+        Speed = NewSpeed;
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("walk"))
+        {
+            anim.speed = 3f;
+        }
+    }
+    
+
+    public void SetHauteur()
+    {
+        this.transform.position = new Vector3(this.transform.position.x, Player.transform.position.y, this.transform.position.z);
     }
 
     void MoveToPlayer()
