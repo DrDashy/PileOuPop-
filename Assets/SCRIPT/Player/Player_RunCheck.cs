@@ -21,7 +21,11 @@ public class Player_RunCheck : MonoBehaviour {
     [Header("AudioSource : ")]
     public AudioSource audioSource;
 
+    [Header("Son Respiration : ")]
+    // public AudioClip Respiration;
+
     private bool IsRunning;
+    private bool Stop;
 
     // Use this for initialization
     void Start () {
@@ -29,6 +33,8 @@ public class Player_RunCheck : MonoBehaviour {
         originTimeWhileRun = CurrentTimeWhileRun;
         audioSource.GetComponent<AudioSource>();
         audioSource.loop = true;
+        Stop = false;
+        audioSource.volume = 0;
     }
 	
 	// Update is called once per frame
@@ -36,31 +42,50 @@ public class Player_RunCheck : MonoBehaviour {
         // Lance le check qui cour
         if (Input.GetKeyDown(KeyCode.LeftShift) && !IsRunning)
         {
+            ResetTimer();
+            IsRunning = true;
+            Stop = false;
             CheckRun();
         }
 
         if (Input.GetKeyUp(KeyCode.LeftShift) && IsRunning)
         {
-
+            IsRunning = false;
+            Stop = true;
+            CheckArretRun();
         }
+    }
+
+    private void ResetTimer()
+    {
+        CurrentTimeWhileRun = originTimeWhileRun;
     }
 
     private void CheckRun()
     {
-        IsRunning = true;
         CurrentTimeWhileRun -= Time.deltaTime;
-        if (CurrentTimeWhileRun < 0)
+        if (CurrentTimeWhileRun > 0 && !Stop)
         {
-
+            FadeIn();
+            Invoke("CheckRun", 1f);
         } else
         {
-            Invoke("CheckRun", 0f);
+            CurrentTimeWhileRun = 0;
         }
     }
 
     private void CheckArretRun()
     {
-        
+        CurrentTimeWhileRun += Time.deltaTime;
+        if (CurrentTimeWhileRun < originTimeWhileRun && Stop)
+        {
+            FadeOut();
+            Invoke("CheckArretRun", 1f);
+        }
+        else
+        {
+            audioSource.Stop();
+        }
     }
 
     void FadeIn()
@@ -68,7 +93,9 @@ public class Player_RunCheck : MonoBehaviour {
         if (audioSource.volume < maxVolume)
         {
             audioSource.volume += speedVolume;
-            Invoke("FadeIn", 1f);
+        } else
+        {
+            audioSource.volume = 1f;
         }
     }
 
@@ -76,8 +103,10 @@ public class Player_RunCheck : MonoBehaviour {
     {
         if (audioSource.volume > 0)
         {
-            audioSource.volume += speedVolume;
-            Invoke("FadeOut", 1f);
+            audioSource.volume -= speedVolume;
+        } else
+        {
+            audioSource.volume = 0;
         }
     }
 
