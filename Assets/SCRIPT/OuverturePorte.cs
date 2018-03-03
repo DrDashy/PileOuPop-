@@ -35,7 +35,7 @@ public class OuverturePorte : MonoBehaviour, IActivable {
 	public void OpenDoor(GameObject porte)
 	{
 		porte.GetComponent<Animator> ().SetBool ("isOpen", true);
-		porte.GetComponent<BoxCollider> ().isTrigger = this.GetComponent<Animator> ().GetBool ("isOpen");
+		porte.GetComponent<BoxCollider> ().isTrigger = true;
 	}
 
 
@@ -49,6 +49,7 @@ public class OuverturePorte : MonoBehaviour, IActivable {
 	public void OnTriggerExit()
 	{
 		this.GetComponent<Animator> ().SetBool ("isOpen", false);
+		this.GetComponent<BoxCollider> ().isTrigger = false;
 	}
 
 }
