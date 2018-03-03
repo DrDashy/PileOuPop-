@@ -45,12 +45,41 @@ public class PlayerCheckEnnemis : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		// Calme Zone
-        if(Vector3.Distance(Ennemis.transform.position, Player.transform.position) > calmDistance && !inCalmZone)
+        CheckDistanceEnnemis();
+    }
+
+    private void FixedUpdate()
+    {
+        if (inCalmZone)
         {
             FadeOut(audioSourceAlert);
             FadeOut(audioSourceDanger);
 
+            FadeIn(audioSourceCalm);
+        }
+
+        if (inAlertZone)
+        {
+            FadeOut(audioSourceCalm);
+            FadeOut(audioSourceDanger);
+
+            FadeIn(audioSourceAlert);
+        }
+
+        if (inDangerZone)
+        {
+            FadeOut(audioSourceCalm);
+            FadeOut(audioSourceAlert);
+
+            FadeIn(audioSourceDanger);
+        }
+    }
+
+    private void CheckDistanceEnnemis()
+    {
+        // Calme Zone
+        if (Vector3.Distance(Ennemis.transform.position, Player.transform.position) > calmDistance && !inCalmZone)
+        {
             inCalmZone = true;
             inAlertZone = false;
             inDangerZone = false;
@@ -58,16 +87,11 @@ public class PlayerCheckEnnemis : MonoBehaviour {
             audioSourceCalm.Play();
             audioSourceAlert.Stop();
             audioSourceDanger.Stop();
-
-            FadeIn(audioSourceCalm);
         }
 
         // Alert Zone
         if (Vector3.Distance(Ennemis.transform.position, Player.transform.position) <= calmDistance && Vector3.Distance(Ennemis.transform.position, Player.transform.position) > dangerDistance && !inAlertZone)
         {
-            FadeOut(audioSourceCalm);
-            FadeOut(audioSourceDanger);
-
             inCalmZone = false;
             inAlertZone = true;
             inDangerZone = false;
@@ -75,16 +99,11 @@ public class PlayerCheckEnnemis : MonoBehaviour {
             audioSourceCalm.Stop();
             audioSourceAlert.Play();
             audioSourceDanger.Stop();
-            
-            FadeIn(audioSourceAlert);
         }
 
         // Alert Zone
         if (Vector3.Distance(Ennemis.transform.position, Player.transform.position) < dangerDistance && !inDangerZone)
         {
-            FadeOut(audioSourceCalm);
-            FadeOut(audioSourceAlert);
-
             inCalmZone = false;
             inAlertZone = false;
             inDangerZone = true;
@@ -92,8 +111,6 @@ public class PlayerCheckEnnemis : MonoBehaviour {
             audioSourceCalm.Stop();
             audioSourceAlert.Stop();
             audioSourceDanger.Play();
-
-            FadeIn(audioSourceDanger);
         }
     }
 
