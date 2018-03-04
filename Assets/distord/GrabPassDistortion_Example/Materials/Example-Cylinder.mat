@@ -36,3 +36,4 @@ Material:
     - _IntensityAndScrolling: {r: 0.02, g: 0.02, b: 0.2, a: 1}
     - _NearFarParams: {r: 0, g: 50, b: 0, a: 0}
     - _PivotAndAngle: {r: 0.5, g: 0.5, b: 0, a: 0}
+    - _Tint: {r: 0.5, g: 0.5, b: 0.5, a: 1}
