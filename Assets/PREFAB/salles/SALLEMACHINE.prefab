@@ -4606,6 +4606,7 @@ MonoBehaviour:
   highlightMaterial: {fileID: 2100000, guid: 8fc778a2453643d44a9a6eee66acc949, type: 2}
   loader: {fileID: 114266120277907278}
   nextroom: {fileID: 1064928607396010, guid: 6e74fefc1eed2b3458463952bbe60878, type: 2}
+  Tuyaud: {fileID: 1962130768354774}
 --- !u!137 &137372062987811422
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
