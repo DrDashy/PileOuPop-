@@ -3,12 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class InteractionLever : MonoBehaviour, IActivable {
-	public IActivable objetActivable;
+	//public IActivable objetActivable;
+
+    // [HideInInspector]
+    public bool WasActivated;
+
+    public int IndiceTableau;
+
+    public bool CanBeReactivated;
+
+    [Range(1,3)]
+    public int NiveauReferent;
+
+    private GameObject ManagerInteract;
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        ManagerInteract = GameObject.FindGameObjectWithTag("InteractionManager");
+        CheckIsActive();
+        if (WasActivated)
+            GetComponent<Animator>().SetBool("isActivated", true);
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -17,34 +32,40 @@ public class InteractionLever : MonoBehaviour, IActivable {
 
 	public void Activate()
 	{
-		Debug.Log ("test");
-		if (this.GetComponent<Animator> ().GetBool("isActivated") == false) {
-			ActivateLever ();
-		} else {
-			DesactivateLever ();
-		}
-
+        Debug.Log("Hoy");
+        if (!WasActivated || CanBeReactivated)
+        {
+            if (this.GetComponent<Animator>().GetBool("isActivated") == false)
+            {
+                ManagerInteract.GetComponent<InteractionManager>().SetBoolIsActive(IndiceTableau, NiveauReferent, true);
+                CheckIsActive();
+                ActivateLever();
+            }
+            else
+            {
+                DesactivateLever();
+            }
+        }
 	}
 
-	public void Highlight()
+    public void CheckIsActive()
+    {
+        WasActivated = ManagerInteract.GetComponent<InteractionManager>().CheckBoolIsActive(IndiceTableau, NiveauReferent);
+    }
+
+    public void Highlight()
 	{
 
 	}
 
 	public void ActivateLever()
 	{
-		Debug.Log ("activé");
 		GetComponent<Animator> ().SetBool ("isActivated", true);
-		//objetActivable.Activate ();
 	}
-
-
 
 	public void DesactivateLever()
 	{
-		Debug.Log ("desactivé");
 		GetComponent<Animator> ().SetBool ("isActivated", false);
-		//objetActivable.Activate ();
 	}
 		
 }
