@@ -16,8 +16,10 @@ public class N2_L4 : MonoBehaviour {
 
     void Update()
     {
-        if (ManagerInteract.GetComponent<InteractionManager>().CheckBoolIsActive(3, 2) && !alreadyCheck)
+        bool test = ManagerInteract.GetComponent<InteractionManager>().LevierNiveau2IsActive[3];
+        if (test && !alreadyCheck)
         {
+            Debug.Log("test");
             alreadyCheck = true;
             TryOrderLever();
         }
@@ -26,6 +28,7 @@ public class N2_L4 : MonoBehaviour {
 
     public void TryOrderLever()
     {
+        Debug.Log("test");
         if (ManagerInteract.GetComponent<InteractionManager>().CheckSuiteLevier())
         {
             ManagerInteract.GetComponent<InteractionManager>().Niveau2Reussi = true;

@@ -6,6 +6,8 @@ public class LumiereSpot : MonoBehaviour {
 
     public GameObject spot;
 
+    public GameObject spotSol;
+
     public int IndiceTableau;
 
     private GameObject ManagerInteract;
@@ -22,9 +24,11 @@ public class LumiereSpot : MonoBehaviour {
         if (ManagerInteract.GetComponent<InteractionManager>().LevierNiveau2IsActive[IndiceTableau])
         {
             spot.GetComponent<Light>().enabled = true;
+            spotSol.GetComponent<Light>().enabled = true;
         } else
         {
             spot.GetComponent<Light>().enabled = false;
+            spotSol.GetComponent<Light>().enabled = false;
         }
     }
 }
