@@ -10,8 +10,14 @@ public class PauseMenu : MonoBehaviour {
     [Header("Canvas Menu Pause :")]
     public GameObject MenuPause;
 
+    [Header("Canvas Menu Mort :")]
+    public GameObject MenuMortAffiche;
+
     [Header("Bouton du menu pause :")]
     public Button[] BoutonMenuPause;
+
+    [Header("Bouton du menu pause :")]
+    public Image[] TexteBoutonMenuPause;
 
     [Header("Nom de la fonction qu'activera chaque bouton :")]
     public string[] NomFonction;
@@ -23,14 +29,12 @@ public class PauseMenu : MonoBehaviour {
     private GameObject Player;
 	private bool isPaused;
 
-    private GameObject MenuMortAffiche;
-
     void Awake()
 	{
 		Player = GameObject.FindGameObjectWithTag("Player");
-        MenuMortAffiche = GameObject.FindGameObjectWithTag("MenuMort");
         MenuPause.SetActive(false);
         BoutonSelectionner = 0;
+        isPaused = false;
     }
 
 	// Use this for initialization
@@ -146,6 +150,10 @@ public class PauseMenu : MonoBehaviour {
             if (i == compteur)
             {
                 BoutonMenuPause[i].Select();
+                TexteBoutonMenuPause[i].color = new Color32(0, 33, 255, 255);
+            } else
+            {
+                TexteBoutonMenuPause[i].color = new Color32(255, 255, 255, 255);
             }
         }
     }
