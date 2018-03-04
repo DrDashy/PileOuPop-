@@ -35,11 +35,12 @@ public class RoomLoader : MonoBehaviour {
 
     public GameObject PreviousRoom;
 
-    public EnnemisManagerSpawn EnnemisManger;
+    private GameObject EnnemisManager;
+    private EnnemisManagerSpawn ScriptEnnemisManger;
 
     public bool isInTheRoom = false;
 
-    protected Direction orientation;
+    public Direction orientation;
     
 
     public enum Direction
@@ -51,7 +52,18 @@ public class RoomLoader : MonoBehaviour {
     }
 
     protected bool Loaded = false;
-   
+
+
+    private void Start()
+    {
+        EnnemisManager = GameObject.FindGameObjectWithTag("EnnemisManager");
+        if (!EnnemisManager)
+            Debug.Log(EnnemisManager);
+        if (EnnemisManager)
+            ScriptEnnemisManger = EnnemisManager.GetComponent<EnnemisManagerSpawn>();
+        if (!ScriptEnnemisManger)
+            Debug.Log(ScriptEnnemisManger);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -70,12 +82,14 @@ public class RoomLoader : MonoBehaviour {
 
     public void LoadRooms()
     {
-        if(EnnemisManger != null)
-        if (EnnemisManger.CloneCreer)
-                EnnemisManger.conteurSalle--;
+        if(EnnemisManager)
+            if(ScriptEnnemisManger.CloneCreer)
+                ScriptEnnemisManger.conteurSalle--;
         
-        if (!Loaded) {   
-            switch ((int)transform.eulerAngles.y / 90 % 4)
+        if (!Loaded) {
+            
+            Debug.Log((int)transform.eulerAngles.y + " -> " + (int)transform.eulerAngles.y / 90);
+            switch ((int)(Mathf.Round((float)transform.eulerAngles.y / 90f) % 4))
             {
                 case 0: orientation = Direction.Front; break;
                 case 1: orientation = Direction.Right; break;

@@ -6,10 +6,17 @@ public class OuverturePorte : MonoBehaviour, IActivable {
 	public OuverturePorte porteVoisine;
     public RoomLoader loader;
 
+    public AudioClip OuvertureEtFermeture;
+
+    private AudioSource audioSource;
+
+    public bool IsStuck;
+
     protected bool IsOpen;
 
 	void Start()
 	{
+        audioSource = GetComponent<AudioSource>();
         IsOpen = false;
         if (loader == null)
             Debug.Log("Pas de loader détecté");
@@ -17,20 +24,21 @@ public class OuverturePorte : MonoBehaviour, IActivable {
 
 	public void Activate()
 	{
-		if (!IsOpen) {
-			OpenDoor();
+		if (!IsOpen && !IsStuck) {
+            OpenDoor();
             if(porteVoisine!= null)
                  porteVoisine.OpenDoor();
 		} 
 	}
 
-	public void Highlight()
+    public void Highlight()
 	{
 		
 	}
 
 	public void OpenDoor()
 	{
+        audioSource.PlayOneShot(OuvertureEtFermeture);
         IsOpen = true;
 		GetComponent<Animator> ().SetBool ("isOpen", true);
 		GetComponent<BoxCollider> ().isTrigger = true;
@@ -40,19 +48,17 @@ public class OuverturePorte : MonoBehaviour, IActivable {
 
 	public void CloseDoor()
 	{
-        Debug.Log("Closing");
+        audioSource.PlayOneShot(OuvertureEtFermeture);
         IsOpen = false;
         GetComponent<Animator> ().SetBool ("isOpen", false);
 		GetComponent<BoxCollider> ().isTrigger = false;
         if (loader.isInTheRoom)
         {
-            Debug.Log("Loading");
             loader.LoadRooms();            
         }
-            
 	}
 
-	public void OnTriggerExit()
+    public void OnTriggerExit()
 	{
         Debug.Log("Quit coolider door");
         CloseDoor();

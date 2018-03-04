@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114422685992830564}
   m_Layer: 0
   m_Name: EnnemisManager
-  m_TagString: Untagged
+  m_TagString: EnnemisManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53,8 +53,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PoursuivantEnnemis: {fileID: 1482877698021484, guid: 7827409fc1370f04e9ce2c0e770164dd,
     type: 2}
-  TempsMinSpawn: 0
-  TempsMaxSpawn: 10
+  TempsMinSpawn: 20
+  TempsMaxSpawn: 60
   Distance: 50
   CloneCreer: 0
-  conteurSalle: 3
+  conteurSalle: 6

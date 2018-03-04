@@ -53,7 +53,9 @@ GameObject:
   - component: {fileID: 95359210568340824}
   - component: {fileID: 65913972530265152}
   - component: {fileID: 114563532190946586}
-  m_Layer: 0
+  - component: {fileID: 82459167122966444}
+  - component: {fileID: 114439569009312128}
+  m_Layer: 8
   m_Name: doorenter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,8 +293,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4598115382155048}
   - component: {fileID: 95495843698765964}
-  m_Layer: 0
-  m_Name: levier (1)
+  - component: {fileID: 114377778846378842}
+  - component: {fileID: 65527928960057238}
+  m_Layer: 8
+  m_Name: levier3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -356,7 +360,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4484304614689090}
   - component: {fileID: 137280325957277200}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -551,7 +555,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4834913425434262}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bone.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -601,7 +605,7 @@ GameObject:
   - component: {fileID: 4392542550107452}
   - component: {fileID: 33740990860062340}
   - component: {fileID: 23922945003973802}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Socle_Levier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -700,7 +704,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4567555826402978}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bone_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -732,7 +736,7 @@ GameObject:
   - component: {fileID: 4001641850607006}
   - component: {fileID: 33828613962939440}
   - component: {fileID: 23292162835391966}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Levier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -814,7 +818,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4858714956622296}
   - component: {fileID: 95349768575331844}
-  m_Layer: 0
+  - component: {fileID: 65428204201239562}
+  - component: {fileID: 114392301443667306}
+  m_Layer: 8
   m_Name: levier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -899,7 +905,7 @@ GameObject:
   - component: {fileID: 4601529840250102}
   - component: {fileID: 33166148974699922}
   - component: {fileID: 23917449215347906}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Levier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -914,7 +920,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4962912734923074}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -947,7 +953,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4223655036001866}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -982,6 +988,8 @@ GameObject:
   - component: {fileID: 95439457758609988}
   - component: {fileID: 65232064318530376}
   - component: {fileID: 114825120689787952}
+  - component: {fileID: 82432862632658514}
+  - component: {fileID: 114374379556773712}
   m_Layer: 8
   m_Name: doorfront
   m_TagString: Untagged
@@ -1163,7 +1171,7 @@ GameObject:
   - component: {fileID: 4970753116717102}
   - component: {fileID: 33681533251928420}
   - component: {fileID: 23714394795244212}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1179,6 +1187,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4258508927828418}
   - component: {fileID: 95361504258048898}
+  - component: {fileID: 114023816225128004}
   m_Layer: 0
   m_Name: coffre_fort3
   m_TagString: Untagged
@@ -1226,7 +1235,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4425159677530332}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bone.001_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1243,7 +1252,7 @@ GameObject:
   - component: {fileID: 4018606042116166}
   - component: {fileID: 33349702635664632}
   - component: {fileID: 23977588104147786}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Socle_Levier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2129,7 +2138,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1064928607396010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 23.812878, y: 38.563675, z: -17.093796}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4589820740051136}
@@ -3844,6 +3853,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65428204201239562
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1569420095214488}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1.8996433}
+  m_Center: {x: 0, y: 0, z: -0.100107126}
 --- !u!65 &65431541445491188
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -3880,6 +3901,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.024922099, y: 0.020000003, z: 0.15999995}
   m_Center: {x: 0.05753894, y: 0.000000058611235, z: 0.08017237}
+--- !u!65 &65527928960057238
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1194491628942954}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 2.034774}
+  m_Center: {x: 0, y: 0, z: -0.010244922}
 --- !u!65 &65587308940943216
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -4010,8 +4043,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 6.003317, y: 7.7731323, z: 1.4599657}
+  m_Center: {x: -0.15365005, y: 3.3865657, z: -0.22998253}
 --- !u!65 &65979350298574002
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -4024,6 +4057,166 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!82 &82432862632658514
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1796721009830622}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!82 &82459167122966444
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1027901941857040}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95349768575331844
 Animator:
   serializedVersion: 3
@@ -4048,7 +4241,7 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1027901941857040}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 2c4ec2a32debc1e4a8a934149656dee7, type: 3}
   m_Controller: {fileID: 9100000, guid: 76d7399e84a06184488080f515a3b2a6, type: 2}
   m_CullingMode: 1
@@ -4323,6 +4516,17 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114023816225128004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1900897130219430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d78d4612e507cf4489686e330b6461c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114328471177176648
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4332,6 +4536,58 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b6e71934d347cf4d88beaec0bc47b08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114374379556773712
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1796721009830622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf06d7e39dad331488024ae3ddd9b289, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114377778846378842
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1194491628942954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ba2ad994972894cb2b21559c983886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WasActivated: 0
+  IndiceTableau: 0
+  CanBeReactivated: 0
+  NiveauReferent: 0
+--- !u!114 &114392301443667306
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1569420095214488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ba2ad994972894cb2b21559c983886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WasActivated: 0
+  IndiceTableau: 0
+  CanBeReactivated: 0
+  NiveauReferent: 1
+--- !u!114 &114439569009312128
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1027901941857040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb256489fec57d441aada9b5ef57a961, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114563532190946586
@@ -4347,6 +4603,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   porteVoisine: {fileID: 0}
   loader: {fileID: 114871547677864260}
+  OuvertureEtFermeture: {fileID: 8300000, guid: 8099ed1c2f3a75b4d92ad93f0d1c8185,
+    type: 3}
+  IsStuck: 0
 --- !u!114 &114661221426333010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4371,6 +4630,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   porteVoisine: {fileID: 0}
   loader: {fileID: 114871547677864260}
+  OuvertureEtFermeture: {fileID: 8300000, guid: 8099ed1c2f3a75b4d92ad93f0d1c8185,
+    type: 3}
+  IsStuck: 0
 --- !u!114 &114871547677864260
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4385,7 +4647,7 @@ MonoBehaviour:
   RoomLeft: {fileID: 0}
   RoomRight: {fileID: 1699503738463856, guid: e348c1c41ab30fc40a5edf42ea4890c7, type: 2}
   RoomFront: {fileID: 1245935803276052, guid: f517fe932dc4b4e44b0cd8334a033c47, type: 2}
-  RoomBack: {fileID: 0}
+  RoomBack: {fileID: 1546702331630298, guid: dc0358d96a582e84787520508edcb927, type: 2}
   PorteFront: {fileID: 114825120689787952}
   PorteRight: {fileID: 0}
   PorteBack: {fileID: 114563532190946586}
@@ -4396,15 +4658,15 @@ MonoBehaviour:
   CloneBack: {fileID: 0}
   PlacementLeft: {x: 0, y: 0, z: 0}
   PlacementRight: {x: 22.22, y: -0.1, z: -0.28973}
-  PlacementFront: {x: -0.11714, y: 0.0048685, z: 23}
-  PlacementBack: {x: 0, y: 0, z: 0}
+  PlacementFront: {x: -0.11714, y: 0.0048685, z: 24}
+  PlacementBack: {x: 0.18, y: -0.1, z: -23.84}
   leftDirection: 0
   rightDirection: 3
   frontDirection: 2
-  backDirection: 0
+  backDirection: 2
   PreviousRoom: {fileID: 0}
-  EnnemisManger: {fileID: 0}
   isInTheRoom: 0
+  orientation: 0
 --- !u!137 &137280325957277200
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

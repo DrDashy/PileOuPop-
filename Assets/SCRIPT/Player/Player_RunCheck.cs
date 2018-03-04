@@ -42,62 +42,34 @@ public class Player_RunCheck : MonoBehaviour {
         // Lance le check qui cour
         if (Input.GetKeyDown(KeyCode.LeftShift) && !IsRunning)
         {
-            ResetTimer();
             IsRunning = true;
             Stop = false;
-            CheckRun();
+            FadeIn();
         }
 
         if (Input.GetKeyUp(KeyCode.LeftShift) && IsRunning)
         {
             IsRunning = false;
             Stop = true;
-            CheckArretRun();
-        }
-    }
-
-    private void ResetTimer()
-    {
-        CurrentTimeWhileRun = originTimeWhileRun;
-    }
-
-    private void CheckRun()
-    {
-        CurrentTimeWhileRun -= Time.deltaTime;
-        if (CurrentTimeWhileRun > 0 && !Stop)
-        {
-            FadeIn();
-            Invoke("CheckRun", 1f);
-        }
-    }
-
-    private void CheckArretRun()
-    {
-        CurrentTimeWhileRun += Time.deltaTime;
-        if (CurrentTimeWhileRun < originTimeWhileRun && Stop)
-        {
             FadeOut();
-            Invoke("CheckArretRun", 1f);
-        }
-        else
-        {
-            // audioSource.Stop();
         }
     }
 
     void FadeIn()
     {
-        if (audioSource.volume < maxVolume)
+        if (audioSource.volume < maxVolume && !Stop)
         {
             audioSource.volume += speedVolume;
+            Invoke("FadeIn", 1f);
         }
     }
 
     void FadeOut()
     {
-        if (audioSource.volume > 0)
+        if (audioSource.volume > 0 && Stop)
         {
             audioSource.volume -= speedVolume;
+            Invoke("FadeOut", 1f);
         }
     }
 
