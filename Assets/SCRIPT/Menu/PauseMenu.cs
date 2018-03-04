@@ -19,6 +19,9 @@ public class PauseMenu : MonoBehaviour {
     [Header("Bouton du menu pause :")]
     public Image[] TexteBoutonMenuPause;
 
+    [Header("Surlignage des bouton du menu pause :")]
+    public Image[] SurlignageBoutonMenuPause;
+
     [Header("Nom de la fonction qu'activera chaque bouton :")]
     public string[] NomFonction;
     private int BoutonSelectionner;
@@ -155,9 +158,11 @@ public class PauseMenu : MonoBehaviour {
             {
                 BoutonMenuPause[i].Select();
                 TexteBoutonMenuPause[i].color = new Color32(0, 33, 255, 255);
+                SurlignageBoutonMenuPause[i].enabled = true;
             } else
             {
                 TexteBoutonMenuPause[i].color = new Color32(255, 255, 255, 255);
+                SurlignageBoutonMenuPause[i].enabled = false;
             }
         }
     }
