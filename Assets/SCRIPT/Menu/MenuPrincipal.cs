@@ -33,6 +33,10 @@ public class MenuPrincipal : MonoBehaviour
     public AudioSource AudioTic;
     public AudioClip TicSound;
 
+    [Header("AudioSource qui sera le changement de page :")]
+    public AudioSource AudioPage;
+    public AudioClip PageSound;
+
     void Awake()
     {
         CursorActif = false;
@@ -136,6 +140,7 @@ public class MenuPrincipal : MonoBehaviour
 
     private void AfficheControle()
     {
+        AudioPage.PlayOneShot(PageSound);
         AfficheControleEnCour = true;
         AffichePanelMenuPrincipal.SetActive(false);
         AffichePanelControle.SetActive(true);

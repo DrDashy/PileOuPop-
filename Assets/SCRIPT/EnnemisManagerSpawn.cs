@@ -36,7 +36,7 @@ public class EnnemisManagerSpawn : MonoBehaviour {
     {
         GameObject clone = Instantiate(PoursuivantEnnemis);
         float rand = Random.Range(-Mathf.PI, Mathf.PI);
-        clone.transform.position = Player.transform.position + new Vector3(Mathf.Cos(rand)*Distance, -4.05f, Mathf.Sin(rand) * Distance);
+        clone.transform.position = Player.transform.position + new Vector3(Mathf.Cos(rand)*Distance, 1.4f, Mathf.Sin(rand) * Distance);
         CloneCreer = true;
         CheckCloneRoomEnter(clone);
     }

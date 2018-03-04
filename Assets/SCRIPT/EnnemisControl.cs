@@ -27,24 +27,33 @@ public class EnnemisControl : MonoBehaviour {
     [Header("Vitesse de déplacement :")]
     public float SpeedMoving;
 
-    private bool PlayerDeadForSure;
+    [HideInInspector]
+    public bool PlayerDeadForSure;
+
+    private GameObject MenuPause;
 
     private Animator anim;
 
+    [Header("AudioSource chase le joueur :")]
+    public AudioSource AudioChase;
+
+    [Header("Vitesse de FadeIn et FadeOut du son : ")]
+    public float speedVolume;
+
+    [Header("AudioSource qui tue le joueur :")]
+    public AudioSource AudioKill;
+    public AudioClip KillSound;
+
+    [Header("AudioSource qui casse les os du joueur :")]
+    public AudioSource AudioBreakBones;
+    public AudioClip BreakBonesSound;
+
     // Use this for initialization
     void Start () {
+        MenuPause = GameObject.FindGameObjectWithTag("MenuPause");
         anim = GetComponent<Animator>();
         anim.SetBool("Kill", false);
         Player = GameObject.FindGameObjectWithTag("Player");
-    }
-
-    // Use this for initialization
-    void Update()
-    {
-        if (PlayerDeadForSure)
-        {
-            //RotationToEnnemis();
-        }
     }
 
     void FixedUpdate()
@@ -69,6 +78,9 @@ public class EnnemisControl : MonoBehaviour {
             {
                 DesactiveMechant();
             }
+        } else
+        {
+            RotationToPlayer();
         }
     }
 
@@ -100,8 +112,11 @@ public class EnnemisControl : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
+            FadeOut();
+            AudioKill.PlayOneShot(KillSound);
             EnnemisBackALittle();
-            RotationToEnnemis2();
+            MenuPause.GetComponent<PauseMenu>().PlayerDeadForSure = true;
+            RotationToEnnemis();
             PlayerDeadForSure = true;
             anim.SetBool("Kill", true);
             Player.GetComponent<Player_dead>().MortPlayer();
@@ -111,21 +126,14 @@ public class EnnemisControl : MonoBehaviour {
 
     void RotationToEnnemis()
     {
-        // ---------- Déplacement vers Ennemis -------------//
-        Quaternion rotationAngle = Quaternion.LookRotation(Player.transform.position - transform.position); // we get the angle has to be rotated
-        Player.transform.rotation = Quaternion.Slerp(transform.rotation, rotationAngle, Time.deltaTime * SpeedRotateDead); // we rotate the rotationAngle 
-        transform.localEulerAngles = new Vector3(0, transform.localEulerAngles.y, 0); //bloquer sur l'axe y
-    }
-
-    void RotationToEnnemis2()
-    {
-        Player.transform.LookAt(transform.position);
+        // Player.transform.LookAt(transform.position);
+        Player.transform.GetChild(0).LookAt(transform.position);
     }
 
     private void EnnemisBackALittle()
     {
         // ---------- Déplacement vers Joueur -------------//
-        transform.position = new Vector3(transform.position.x - 1f, transform.position.y, transform.position.z);
+        transform.position += Vector3.back * 20f * Time.deltaTime;
     }
 
     IEnumerator WaitBeforeDestroy()
@@ -138,6 +146,23 @@ public class EnnemisControl : MonoBehaviour {
     {
         yield return new WaitForSeconds(TimeBeforeAfficheMenu);
         Player.GetComponent<Player_dead>().AfficheMenuMortPlayer();
-        PlayerDeadForSure = false;
+        AudioBreakBones.PlayOneShot(BreakBonesSound);
+        StartCoroutine(WaitBeforeStopAllSound());
+    }
+
+    IEnumerator WaitBeforeStopAllSound()
+    {
+        yield return new WaitForSeconds(1f);
+        // Desactive tous les sons
+        AudioListener.pause = true;
+    }
+
+    void FadeOut()
+    {
+        if (AudioChase.volume > 0)
+        {
+            AudioChase.volume -= speedVolume;
+            Invoke("FadeOut", 0.5f);
+        }
     }
 }

@@ -29,9 +29,13 @@ public class PauseMenu : MonoBehaviour {
     private GameObject Player;
 	private bool isPaused;
 
+    [HideInInspector]
+    public bool PlayerDeadForSure;
+
     void Awake()
 	{
-		Player = GameObject.FindGameObjectWithTag("Player");
+        PlayerDeadForSure = false;
+        Player = GameObject.FindGameObjectWithTag("Player");
         MenuPause.SetActive(false);
         BoutonSelectionner = 0;
         isPaused = false;
@@ -45,13 +49,13 @@ public class PauseMenu : MonoBehaviour {
 	void Update () 
 	{
 		//Check if the Cancel button in Input Manager is down this frame (default is Escape key) and that game is not paused, and that we're not in main menu
-		if ( ( Input.GetButtonDown ("Pause") || Input.GetButtonDown("Cancel") ) && !isPaused && MenuMortAffiche.GetComponent<MortMenu>().isDead == false) 
+		if ( ( Input.GetButtonDown ("Pause") || Input.GetButtonDown("Cancel") ) && !isPaused && !PlayerDeadForSure )
 		{
 			//Call the DoPause function to pause the game
 			ActivePause();
 		} 
 		//If the button is pressed and the game is paused and not in main menu
-		else if ( (Input.GetButtonDown("Pause") || Input.GetButtonDown("Cancel") ) && isPaused && MenuMortAffiche.GetComponent<MortMenu>().isDead == false) 
+		else if ( (Input.GetButtonDown("Pause") || Input.GetButtonDown("Cancel") ) && isPaused && MenuMortAffiche.GetComponent<MortMenu>().isDead == false && !PlayerDeadForSure) 
 		{
 			//Call the UnPause function to unpause the game
 			EnlevePause ();
