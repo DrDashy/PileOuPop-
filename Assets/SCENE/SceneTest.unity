@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.46323532, g: 0.46323532, b: 0.46323532, a: 1}
+  m_AmbientSkyColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -113,6 +113,52 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &233549755
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 233549757}
+  - component: {fileID: 233549756}
+  m_Layer: 0
+  m_Name: EnnemisManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &233549756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 233549755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e353c92eea9f6c4284e2feeef2b8e23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PoursuivantEnnemis: {fileID: 1482877698021484, guid: 7827409fc1370f04e9ce2c0e770164dd,
+    type: 2}
+  TempsMinSpawn: 20
+  TempsMaxSpawn: 60
+  Distance: 80
+  conteurSalle: 0
+--- !u!4 &233549757
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 233549755}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.96234465, y: -5.065628, z: -2.8519802}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &476480305
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,13 +221,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1801553835
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
     - target: {fileID: 4366439640490342, guid: 5da36d321ea20bd4abf7d13bc5c32fc4, type: 2}
       propertyPath: m_LocalPosition.x
       value: 51.292316
@@ -218,9 +257,7 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5da36d321ea20bd4abf7d13bc5c32fc4, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1001 &1820324288
 Prefab:
   m_ObjectHideFlags: 0
