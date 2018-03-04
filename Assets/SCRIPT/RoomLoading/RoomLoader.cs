@@ -45,9 +45,9 @@ public class RoomLoader : MonoBehaviour {
     public enum Direction
     {
         Front,
+        Right,
         Back,
-        Left,
-        Right
+        Left
     }
 
     protected bool Loaded = false;
@@ -70,10 +70,9 @@ public class RoomLoader : MonoBehaviour {
 
     public void LoadRooms()
     {
+        if(EnnemisManger != null)
         if (EnnemisManger.CloneCreer)
-        {
-            EnnemisManger.conteurSalle--;
-        }
+                EnnemisManger.conteurSalle--;
         
         if (!Loaded) {   
             switch ((int)transform.eulerAngles.y / 90 % 4)
@@ -87,27 +86,27 @@ public class RoomLoader : MonoBehaviour {
             if (RoomLeft != null)
             {
                 CloneLeft = Instantiate(RoomLeft);
-                PlaceRoom(CloneLeft, PlacementLeft, leftDirection, Direction.Left);
+                PlaceRoom(CloneLeft, PlacementLeft, leftDirection, Direction.Left, Direction.Left);
             }
 
             if (RoomRight != null)
             {
                 CloneRight = Instantiate(RoomRight);
-                PlaceRoom(CloneRight, PlacementRight, rightDirection, Direction.Right);
+                PlaceRoom(CloneRight, PlacementRight, rightDirection, Direction.Right, Direction.Right);
             }
 
 
             if (RoomFront != null)
             {
                 CloneFront = Instantiate(RoomFront);
-                PlaceRoom(CloneFront, PlacementFront, frontDirection, Direction.Front);
+                PlaceRoom(CloneFront, PlacementFront, frontDirection, Direction.Front, Direction.Front);
             }
 
 
             if (RoomBack != null)
             {
                 CloneBack = Instantiate(RoomBack);
-                PlaceRoom(CloneBack, PlacementBack, backDirection, Direction.Back);
+                PlaceRoom(CloneBack, PlacementBack, backDirection, Direction.Back, Direction.Back);
             }
 
 
@@ -119,21 +118,17 @@ public class RoomLoader : MonoBehaviour {
         }
     }
 
-    protected void PlaceRoom(GameObject room, Vector3 placement, Direction direction, Direction porte)
+    protected void PlaceRoom(GameObject room, Vector3 placement, Direction direction, Direction porte, Direction side)
     {
 
         RoomLoader loader = room.GetComponent<RoomLoader>();
 
 
-        switch (direction)
-        {
-            case Direction.Front: room.transform.eulerAngles = transform.eulerAngles + new Vector3(0, 180, 0); break;
-            case Direction.Right: room.transform.eulerAngles = transform.eulerAngles + new Vector3(0, 90, 0); break;
-            case Direction.Back: room.transform.eulerAngles = transform.eulerAngles; break;
-            case Direction.Left: room.transform.eulerAngles = transform.eulerAngles + new Vector3(0, -90, 0); break;
-            default: Debug.LogWarning("Mauvaise orientation de la salle passée en switch"); break;
-        }
+        int result = (int)side * 90 - (int)direction * 90 + 180;
+        
+        room.transform.eulerAngles = transform.eulerAngles + new Vector3(0, result, 0);
 
+        
         switch (porte)
         {
 
@@ -147,14 +142,41 @@ public class RoomLoader : MonoBehaviour {
         switch (orientation)
         {
             case Direction.Front: room.transform.position = transform.position + new Vector3(placement.x, placement.y, placement.z); break;
-            case Direction.Right: room.transform.position = transform.position + new Vector3(-placement.z, placement.y, placement.x); break;
+            case Direction.Right: room.transform.position = transform.position + new Vector3(placement.z, placement.y, -placement.x); break;
             case Direction.Back: room.transform.position = transform.position + new Vector3(-placement.x, placement.y, -placement.z); break;
-            case Direction.Left: room.transform.position = transform.position + new Vector3(placement.z, placement.y, -placement.x); break;
+            case Direction.Left: room.transform.position = transform.position + new Vector3(-placement.z, placement.y, placement.x); break;
             default: Debug.LogWarning("Mauvaise orientation de la salle passée en switch"); break;
         }
 
         if (loader != null)
             loader.PreviousRoom = gameObject;
+    }
+
+    protected void LinkPorte(OuverturePorte porte, Direction direction, RoomLoader otherRoom)
+    {
+        if (porte != null)
+        {
+            switch (direction)
+            {
+                case Direction.Front: porte.porteVoisine = otherRoom.PorteFront; otherRoom.PorteFront.porteVoisine = porte; break;
+                case Direction.Right: porte.porteVoisine = otherRoom.PorteRight; otherRoom.PorteRight.porteVoisine = porte; break;
+                case Direction.Back: porte.porteVoisine = otherRoom.PorteBack; otherRoom.PorteBack.porteVoisine = porte; break;
+                case Direction.Left: porte.porteVoisine = otherRoom.PorteLeft; otherRoom.PorteLeft.porteVoisine = porte; break;
+            }
+        }
+    }
+
+    protected void RotateRoom(GameObject room, Direction side)
+    {
+        switch (side)
+        {
+            case Direction.Front: room.transform.eulerAngles = transform.eulerAngles + new Vector3(0, 0, 0); break;
+        }
+    }
+
+    protected void PlaceRoom(Vector3 placement, Direction side)
+    {
+
     }
 
     protected void DestroyPreviousRooms()
@@ -164,7 +186,6 @@ public class RoomLoader : MonoBehaviour {
         {
             if(previousLoarder.CloneFront != gameObject)
                 Destroy(previousLoarder.CloneFront);
-
             if (previousLoarder.CloneRight != gameObject)
                 Destroy(previousLoarder.CloneRight);
             if (previousLoarder.CloneBack != gameObject)
@@ -173,19 +194,5 @@ public class RoomLoader : MonoBehaviour {
                 Destroy(previousLoarder.CloneLeft);
         }
         Destroy(PreviousRoom);
-    }
-
-    protected void LinkPorte(OuverturePorte porte, Direction direction, RoomLoader otherRoom)
-    {
-        if(porte != null)
-        {
-            switch (direction)
-            {
-                case Direction.Front: porte.porteVoisine = otherRoom.PorteFront; otherRoom.PorteFront.porteVoisine = porte; break;
-                case Direction.Right: porte.porteVoisine = otherRoom.PorteRight; otherRoom.PorteRight.porteVoisine = porte; break;
-                case Direction.Back: porte.porteVoisine = otherRoom.PorteBack; otherRoom.PorteBack.porteVoisine = porte; break;
-                case Direction.Left: porte.porteVoisine = otherRoom.PorteLeft; otherRoom.PorteLeft.porteVoisine = porte; break;
-            }
-        }          
     }
 }
