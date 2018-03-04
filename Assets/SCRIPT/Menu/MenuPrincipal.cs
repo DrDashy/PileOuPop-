@@ -9,6 +9,9 @@ public class MenuPrincipal : MonoBehaviour
     [Header("Bouton du menu principal :")]
     public Button[] BoutonMenuPrincipal;
 
+    [Header("Souligner bouton du menu principal :")]
+    public GameObject[] SoulignerBoutonMenuPrincipal;
+
     [Header("Nom de la fonction qu'activera chaque bouton :")]
     public string[] NomFonction;
     private int BoutonSelectionner;
@@ -109,6 +112,10 @@ public class MenuPrincipal : MonoBehaviour
             if (i == compteur)
             {
                 BoutonMenuPrincipal[i].Select();
+                SoulignerBoutonMenuPrincipal[i].GetComponent<Image>().enabled = true;
+            } else
+            {
+                SoulignerBoutonMenuPrincipal[i].GetComponent<Image>().enabled = false;
             }
         }
     }
