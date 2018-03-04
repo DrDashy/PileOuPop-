@@ -6,13 +6,10 @@ public class OuverturePorte : MonoBehaviour, IActivable {
 	public OuverturePorte porteVoisine;
     public RoomLoader loader;
 
-    public bool finAnnim;
-
     protected bool IsOpen;
 
 	void Start()
 	{
-        finAnnim = false;
         IsOpen = false;
         if (loader == null)
             Debug.Log("Pas de loader détecté");
@@ -47,28 +44,12 @@ public class OuverturePorte : MonoBehaviour, IActivable {
         IsOpen = false;
         GetComponent<Animator> ().SetBool ("isOpen", false);
 		GetComponent<BoxCollider> ().isTrigger = false;
-        CloseDoorFinAnim();
-        /*
         if (loader.isInTheRoom)
         {
             Debug.Log("Loading");
             loader.LoadRooms();            
         }
-        */
 	}
-
-    public void CloseDoorFinAnim()
-    {
-        if (loader.isInTheRoom && this.GetComponent<ScriptDoor>().DoorOpen == true)
-        {
-            Debug.Log("Loading");
-            loader.LoadRooms();
-        } else
-        {
-            Invoke("CloseDoorFinAnim", 0f);
-        }
-
-    }
 
     public void OnTriggerExit()
 	{
