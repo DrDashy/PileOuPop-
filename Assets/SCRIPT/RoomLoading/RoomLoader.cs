@@ -59,7 +59,8 @@ public class RoomLoader : MonoBehaviour {
         EnnemisManager = GameObject.FindGameObjectWithTag("EnnemisManager");
         if (!EnnemisManager)
             Debug.Log(EnnemisManager);
-        ScriptEnnemisManger = EnnemisManager.GetComponent<EnnemisManagerSpawn>();
+        if (EnnemisManager)
+            ScriptEnnemisManger = EnnemisManager.GetComponent<EnnemisManagerSpawn>();
         if (!ScriptEnnemisManger)
             Debug.Log(ScriptEnnemisManger);
     }
