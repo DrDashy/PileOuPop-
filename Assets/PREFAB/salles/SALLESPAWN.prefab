@@ -5132,6 +5132,7 @@ MonoBehaviour:
   loader: {fileID: 114723486489499562}
   OuvertureEtFermeture: {fileID: 8300000, guid: 8099ed1c2f3a75b4d92ad93f0d1c8185,
     type: 3}
+  IsStuck: 0
 --- !u!114 &114304810130252212
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5192,6 +5193,7 @@ MonoBehaviour:
   loader: {fileID: 0}
   OuvertureEtFermeture: {fileID: 8300000, guid: 8099ed1c2f3a75b4d92ad93f0d1c8185,
     type: 3}
+  IsStuck: 1
 --- !u!137 &137305374553273074
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
