@@ -593,7 +593,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1681365625578360}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.214535, y: -5.8015594, z: 7.2863464}
+  m_LocalPosition: {x: -2.4, y: -5.8015594, z: -5.87}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 4729608956093200}
@@ -856,7 +856,9 @@ MonoBehaviour:
   stare: 1
   passage: 0
   TimeBeforeDestroy: 0
+  TimeBeforeAfficheMenu: 0
   SpeedRotate: 5
+  SpeedRotateDead: 0
   SpeedMoving: 0
 --- !u!137 &137540799976776014
 SkinnedMeshRenderer:
