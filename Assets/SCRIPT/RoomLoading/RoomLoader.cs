@@ -70,7 +70,11 @@ public class RoomLoader : MonoBehaviour {
 
     public void LoadRooms()
     {
-        EnnemisManger.conteurSalle--;
+        if (EnnemisManger.CloneCreer)
+        {
+            EnnemisManger.conteurSalle--;
+        }
+        
         if (!Loaded) {   
             switch ((int)transform.eulerAngles.y / 90 % 4)
             {

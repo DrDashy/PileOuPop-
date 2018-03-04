@@ -18,7 +18,8 @@ public class EnnemisManagerSpawn : MonoBehaviour {
 
     private GameObject Player;
 
-    private bool CloneCreer;
+    [HideInInspector]
+    public bool CloneCreer;
 
     [Header("Nombre de salle avant dispawn :")]
     public int conteurSalle;
@@ -46,6 +47,8 @@ public class EnnemisManagerSpawn : MonoBehaviour {
         {
             Destroy(clone);
             conteurSalle = 0;
+            CloneCreer = false;
+            StartCoroutine(WaitToSpawnPoursuivant());
         }
     }
 
