@@ -2084,7 +2084,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1673587495014318}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.478631, y: 64.697685, z: -37.138668}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4010043074819294}
@@ -4565,6 +4565,7 @@ MonoBehaviour:
   porteVoisine: {fileID: 0}
   loader: {fileID: 114794046017163040}
   OuvertureEtFermeture: {fileID: 0}
+  IsStuck: 0
 --- !u!114 &114733271590678826
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4580,6 +4581,8 @@ MonoBehaviour:
   loader: {fileID: 114794046017163040}
   nextroom: {fileID: 1948746374554882, guid: 33e970b8818f06b40a1fd333beac7519, type: 2}
   Tuyaud: {fileID: 1126427770279480}
+  ButtonSound: {fileID: 0}
+  audiosource: {fileID: 0}
 --- !u!114 &114794046017163040
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4594,7 +4597,7 @@ MonoBehaviour:
   RoomLeft: {fileID: 0}
   RoomRight: {fileID: 0}
   RoomFront: {fileID: 0}
-  RoomBack: {fileID: 1546702331630298, guid: ea02a77223622554eb06be0dae60658f, type: 2}
+  RoomBack: {fileID: 1546702331630298, guid: dc0358d96a582e84787520508edcb927, type: 2}
   PorteFront: {fileID: 0}
   PorteRight: {fileID: 0}
   PorteBack: {fileID: 114607287052917740}

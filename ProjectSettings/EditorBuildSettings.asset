@@ -9,5 +9,8 @@ EditorBuildSettings:
     path: Assets/SCENE/MenuPrincipal.unity
     guid: adc0a771c67946143b2ea334e1db8671
   - enabled: 1
-    path: Assets/SCENE/SceneTest.unity
-    guid: 79e77ae4d24fb2040a22b1c9dcd14242
+    path: Assets/SCENE/TestAxel.unity
+    guid: dd19b81c342b3974b86b6a1643204b58
+  - enabled: 1
+    path: Assets/SCENE/Fin.unity
+    guid: f3dcd49eecd671943ab43e446e6504ab

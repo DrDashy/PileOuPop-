@@ -4154,7 +4154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfe2e3bf7d3af4f4bab875dcce48103c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RoomLeft: {fileID: 1546702331630298, guid: ea02a77223622554eb06be0dae60658f, type: 2}
+  RoomLeft: {fileID: 1546702331630298, guid: dc0358d96a582e84787520508edcb927, type: 2}
   RoomRight: {fileID: 1064928607396010, guid: 6e74fefc1eed2b3458463952bbe60878, type: 2}
   RoomFront: {fileID: 0}
   RoomBack: {fileID: 0}

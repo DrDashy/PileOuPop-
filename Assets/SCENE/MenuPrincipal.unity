@@ -1558,7 +1558,7 @@ MonoBehaviour:
   - ChargerLaPartie
   - AfficheControle
   - QuitterLeJeu
-  NomMenuPrincipal: SceneTest
+  NomMenuPrincipal: TestAxel
   AffichePanelMenuPrincipal: {fileID: 1385020856}
   AffichePanelControle: {fileID: 1365303413}
   CursorActif: 0

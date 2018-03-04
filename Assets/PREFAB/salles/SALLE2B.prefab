@@ -3798,7 +3798,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1457704949644216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.311172, y: 137.90088, z: 39.327785}
+  m_LocalPosition: {x: 5.3505936, y: 50.803234, z: -34.70136}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4772299304290976}
@@ -9458,7 +9458,7 @@ MonoBehaviour:
   loader: {fileID: 114173103917444654}
   OuvertureEtFermeture: {fileID: 8300000, guid: 8099ed1c2f3a75b4d92ad93f0d1c8185,
     type: 3}
-  IsStuck: 0
+  IsStuck: 1
 --- !u!114 &114420751934323630
 MonoBehaviour:
   m_ObjectHideFlags: 1
