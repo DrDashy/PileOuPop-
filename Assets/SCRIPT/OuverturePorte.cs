@@ -6,10 +6,15 @@ public class OuverturePorte : MonoBehaviour, IActivable {
 	public OuverturePorte porteVoisine;
     public RoomLoader loader;
 
+    public AudioClip OuvertureEtFermeture;
+
+    private AudioSource audioSource;
+
     protected bool IsOpen;
 
 	void Start()
 	{
+        audioSource = GetComponent<AudioSource>();
         IsOpen = false;
         if (loader == null)
             Debug.Log("Pas de loader détecté");
@@ -31,6 +36,7 @@ public class OuverturePorte : MonoBehaviour, IActivable {
 
 	public void OpenDoor()
 	{
+        audioSource.PlayOneShot(OuvertureEtFermeture);
         IsOpen = true;
 		GetComponent<Animator> ().SetBool ("isOpen", true);
 		GetComponent<BoxCollider> ().isTrigger = true;
@@ -40,6 +46,7 @@ public class OuverturePorte : MonoBehaviour, IActivable {
 
 	public void CloseDoor()
 	{
+        audioSource.PlayOneShot(OuvertureEtFermeture);
         Debug.Log("Closing");
         IsOpen = false;
         GetComponent<Animator> ().SetBool ("isOpen", false);
