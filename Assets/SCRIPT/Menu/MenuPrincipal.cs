@@ -26,18 +26,16 @@ public class MenuPrincipal : MonoBehaviour
     public GameObject AffichePanelControle;
     private bool AfficheControleEnCour;
 
+    [HideInInspector]
+    public bool CursorActif;
+
     void Awake()
     {
+        CursorActif = false;
         AffichePanelMenuPrincipal.SetActive(true);
         AffichePanelControle.SetActive(false);
         AfficheControleEnCour = false;
         BoutonSelectionner = 0;
-    }
-
-    // Use this for initialization
-    void Start()
-    {
-
     }
 
     void Update()

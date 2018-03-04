@@ -17,12 +17,21 @@ public class MortMenu : MonoBehaviour
     [Header("Bouton du menu mort :")]
     public Button[] BoutonMenuMort;
 
+    [Header("Texte bouton :")]
+    public Image[] TexteBoutton;
+
     [Header("Nom de la fonction qu'activera chaque bouton :")]
     public string[] NomFonction;
     private int BoutonSelectionner;
 
     [Header("Nom de la scene à recharger :")]
     public string NomSceneRecharger;
+
+    [Header("Texte a la mort :")]
+    public Text ObjectTexteMort;
+
+    [Header("Nom du texte a la mort :")]
+    public string[] TexteMort;
 
     [Header("Nom de la scene pour quitter :")]
     public string NomSceneQuitter;
@@ -51,8 +60,12 @@ public class MortMenu : MonoBehaviour
 
     public void ActiveCanvas()
     {
-        MenuMort.SetActive(true);
-        InGame.SetActive(false);
+        if (!isDead)
+        {
+            MenuMort.SetActive(true);
+            ObjectTexteMort.text = TexteMort[Random.Range(0, TexteMort.Length)];
+            InGame.SetActive(false);
+        }    
     }
 
     private void ActiveBouton(int compteur)
@@ -109,6 +122,10 @@ public class MortMenu : MonoBehaviour
             if (i == compteur)
             {
                 BoutonMenuMort[i].Select();
+                TexteBoutton[i].color = new Color32(0, 33, 255, 255);
+            } else
+            {
+                TexteBoutton[i].color = new Color32(255, 255, 255, 255);
             }
         }
     }
