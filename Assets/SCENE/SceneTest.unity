@@ -113,10 +113,52 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &351087801 stripped
+--- !u!1 &233549755
 GameObject:
-  m_PrefabParentObject: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
-  m_PrefabInternal: {fileID: 1850384871}
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 233549757}
+  - component: {fileID: 233549756}
+  m_Layer: 0
+  m_Name: EnnemisManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &233549756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 233549755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e353c92eea9f6c4284e2feeef2b8e23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PoursuivantEnnemis: {fileID: 1482877698021484, guid: 7827409fc1370f04e9ce2c0e770164dd,
+    type: 2}
+  TempsMinSpawn: 20
+  TempsMaxSpawn: 60
+  Distance: 80
+  conteurSalle: 0
+--- !u!4 &233549757
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 233549755}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.96234465, y: -5.065628, z: -2.8519802}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &403478631
 Prefab:
   m_ObjectHideFlags: 0
@@ -219,7 +261,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &504586581
 Prefab:
@@ -336,11 +378,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e4372b45f025424fa869d0fe49c9657, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &812285983 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1482877698021484, guid: 7827409fc1370f04e9ce2c0e770164dd,
-    type: 2}
-  m_PrefabInternal: {fileID: 1801553835}
 --- !u!1001 &814294554
 Prefab:
   m_ObjectHideFlags: 0
@@ -428,58 +465,6 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 84d91094e18a155419a24008f441b28a, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &1509214713
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4613002415979748, guid: ea927fa2f3b87254abc9293380af307d, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 17.274633
-      objectReference: {fileID: 0}
-    - target: {fileID: 4613002415979748, guid: ea927fa2f3b87254abc9293380af307d, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.79137325
-      objectReference: {fileID: 0}
-    - target: {fileID: 4613002415979748, guid: ea927fa2f3b87254abc9293380af307d, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 37.577995
-      objectReference: {fileID: 0}
-    - target: {fileID: 4613002415979748, guid: ea927fa2f3b87254abc9293380af307d, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4613002415979748, guid: ea927fa2f3b87254abc9293380af307d, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4613002415979748, guid: ea927fa2f3b87254abc9293380af307d, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4613002415979748, guid: ea927fa2f3b87254abc9293380af307d, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4613002415979748, guid: ea927fa2f3b87254abc9293380af307d, type: 2}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 114998448469931860, guid: ea927fa2f3b87254abc9293380af307d,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 351087801}
-    - target: {fileID: 114998448469931860, guid: ea927fa2f3b87254abc9293380af307d,
-        type: 2}
-      propertyPath: Ennemis
-      value: 
-      objectReference: {fileID: 812285983}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: ea927fa2f3b87254abc9293380af307d, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1662885623
 Prefab:

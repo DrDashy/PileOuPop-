@@ -20,7 +20,7 @@ public class EnnemisManagerSpawn : MonoBehaviour {
 
     private bool CloneCreer;
 
-    [HideInInspector]
+    [Header("Nombre de salle avant dispawn :")]
     public int conteurSalle;
 
     // Use this for initialization
@@ -42,7 +42,7 @@ public class EnnemisManagerSpawn : MonoBehaviour {
 
     private void CheckCloneRoomEnter(GameObject clone)
     {
-        if (conteurSalle == 3)
+        if (conteurSalle < 0)
         {
             Destroy(clone);
             conteurSalle = 0;
