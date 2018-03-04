@@ -5,6 +5,9 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class Player_dead : MonoBehaviour {
 
+    [Header("Vitesse de rotation :")]
+    public float SpeedRotate;
+
     private GameObject MenuMortAffiche;
 
 	// Use this for initialization
@@ -21,8 +24,13 @@ public class Player_dead : MonoBehaviour {
     {
         // Anule les mouvements du joueur
         this.GetComponent<FirstPersonController>().enabled = false;
+    }
+
+    public void AfficheMenuMortPlayer()
+    {
         // Active le menu mort
         MenuMortAffiche.GetComponent<MortMenu>().ActiveCanvas();
         MenuMortAffiche.GetComponent<MortMenu>().isDead = true;
     }
+
 }
