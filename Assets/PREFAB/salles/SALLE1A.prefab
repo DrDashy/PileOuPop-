@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 114871547677864260}
   - component: {fileID: 114775459124909070}
   m_Layer: 0
-  m_Name: SALLE3
+  m_Name: SALLE1A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
