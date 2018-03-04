@@ -240,7 +240,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1546797714579026
 GameObject:
   m_ObjectHideFlags: 1
@@ -444,7 +444,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1677555150436984}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 2.2, z: 0.000000007450581}
+  m_LocalPosition: {x: 0, y: -0.5999875, z: 0.000000007450581}
   m_LocalScale: {x: 70, y: 70, z: 70}
   m_Children: []
   m_Father: {fileID: 4669275810470580}
@@ -704,7 +704,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1482877698021484}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 37.5, y: -5.89, z: -5.1}
+  m_LocalPosition: {x: 16.61, y: -4.05, z: -5.1}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 4876810764758002}
@@ -777,7 +777,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1406262531343816}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 2.2651854, z: 0.063684456}
+  m_LocalPosition: {x: 0, y: -0.5348022, z: 0.063684456}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
   - {fileID: 4080541783726006}
@@ -838,8 +838,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 3.85983, z: 0.93254495}
-  m_Center: {x: 0, y: 2.095148, z: 0.09714906}
+  m_Size: {x: 1, y: 3.1036987, z: 0.93254495}
+  m_Center: {x: 0, y: -1.029274, z: 0.09714906}
 --- !u!82 &82139213393516900
 AudioSource:
   m_ObjectHideFlags: 1
@@ -929,7 +929,7 @@ Animator:
   m_GameObject: {fileID: 1482877698021484}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 5c3f39d7d9ba8d243b9b082dc8459cfb, type: 3}
-  m_Controller: {fileID: 9100000, guid: cb41ea3625ff11b4ba0c44d49ad99444, type: 2}
+  m_Controller: {fileID: 9100000, guid: 92e259ad55d5b4e479587c8c78e057a5, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -967,7 +967,9 @@ MonoBehaviour:
   stare: 0
   passage: 0
   TimeBeforeDestroy: 0
+  TimeBeforeAfficheMenu: 10
   SpeedRotate: 5
+  SpeedRotateDead: 5
   SpeedMoving: 5
 --- !u!137 &137373192645222922
 SkinnedMeshRenderer:
