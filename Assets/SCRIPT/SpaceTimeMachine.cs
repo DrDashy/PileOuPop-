@@ -31,7 +31,7 @@ public class SpaceTimeMachine : MonoBehaviour, IActivable {
 		if (IsPuched == false) {
 			IsPuched = true;
 			loader.RoomBack = nextroom;
-			loader.PlacementBack = new Vector3 (0.25611f, -6.8188f, -25f);
+			loader.PlacementBack = new Vector3 (1.04f, -6.9141e-05f, -23.7f);
 			loader.LoadRooms ();
 		}
 	}

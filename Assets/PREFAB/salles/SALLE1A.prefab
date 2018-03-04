@@ -51,6 +51,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4204054910164006}
   - component: {fileID: 95359210568340824}
+  - component: {fileID: 65913972530265152}
+  - component: {fileID: 114563532190946586}
   m_Layer: 0
   m_Name: doorenter
   m_TagString: Untagged
@@ -121,7 +123,6 @@ GameObject:
   - component: {fileID: 4863486236998842}
   - component: {fileID: 65132975036994150}
   - component: {fileID: 114871547677864260}
-  - component: {fileID: 114775459124909070}
   m_Layer: 0
   m_Name: SALLE1A
   m_TagString: Untagged
@@ -3733,8 +3734,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 21.42473, y: 10.083274, z: 23.52076}
+  m_Center: {x: 0.6861887, y: -1.0513825, z: -0.5393696}
 --- !u!65 &65163351309891234
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -3993,6 +3994,18 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1882314644615908}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65913972530265152
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1027901941857040}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -4321,6 +4334,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b6e71934d347cf4d88beaec0bc47b08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114563532190946586
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1027901941857040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 519b2ac874db42d489533fb5148cdd9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  porteVoisine: {fileID: 0}
+  loader: {fileID: 114871547677864260}
 --- !u!114 &114661221426333010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4330,17 +4356,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b6e71934d347cf4d88beaec0bc47b08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114775459124909070
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1064928607396010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75ff9225d69dea949af596effa3b704a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114825120689787952
@@ -4373,19 +4388,19 @@ MonoBehaviour:
   RoomBack: {fileID: 0}
   PorteFront: {fileID: 114825120689787952}
   PorteRight: {fileID: 0}
-  PorteBack: {fileID: 0}
+  PorteBack: {fileID: 114563532190946586}
   PorteLeft: {fileID: 0}
   CloneLeft: {fileID: 0}
   CloneRight: {fileID: 0}
   CloneFront: {fileID: 0}
   CloneBack: {fileID: 0}
   PlacementLeft: {x: 0, y: 0, z: 0}
-  PlacementRight: {x: 22.98, y: 0.001, z: 0}
-  PlacementFront: {x: 0, y: 0, z: 24.99}
+  PlacementRight: {x: 22.22, y: -0.1, z: -0.28973}
+  PlacementFront: {x: -0.11714, y: 0.0048685, z: 23}
   PlacementBack: {x: 0, y: 0, z: 0}
   leftDirection: 0
-  rightDirection: 2
-  frontDirection: 1
+  rightDirection: 3
+  frontDirection: 2
   backDirection: 0
   PreviousRoom: {fileID: 0}
   EnnemisManger: {fileID: 0}
