@@ -35,6 +35,7 @@ public class RoomLoader : MonoBehaviour {
 
     public GameObject PreviousRoom;
 
+    public EnnemisManagerSpawn EnnemisManger;
 
     public bool isInTheRoom = false;
 
@@ -69,6 +70,7 @@ public class RoomLoader : MonoBehaviour {
 
     public void LoadRooms()
     {
+        EnnemisManger.conteurSalle++;
         if (!Loaded) {   
             switch ((int)transform.eulerAngles.y / 90 % 4)
             {
