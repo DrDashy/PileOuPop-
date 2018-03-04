@@ -12,6 +12,9 @@ public class SpaceTimeMachine : MonoBehaviour, IActivable {
 	protected Material[] initialMaterial;
 	protected bool IsPuched;
 
+	public AudioClip ButtonSound;
+	public AudioSource audiosource;
+
 	void Start()
 	{
 		meshRend = GetComponent<MeshRenderer>();
@@ -34,6 +37,7 @@ public class SpaceTimeMachine : MonoBehaviour, IActivable {
 			loader.PlacementBack = new Vector3 (1.04f, -6.9141e-05f, -23.7f);
 			loader.LoadRooms ();
 			Tuyaud.GetComponent<madMachine> ().CanDegenerate = true;
+			audiosource.PlayOneShot (ButtonSound, 1f);
 		}
 	}
 
