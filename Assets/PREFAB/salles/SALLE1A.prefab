@@ -2138,7 +2138,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1064928607396010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.812878, y: 38.563675, z: -17.093796}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4589820740051136}
@@ -3743,8 +3743,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 21.42473, y: 10.083274, z: 23.52076}
-  m_Center: {x: 0.6861887, y: -1.0513825, z: -0.5393696}
+  m_Size: {x: 21.42473, y: 10.083274, z: 24.213776}
+  m_Center: {x: 0.6861887, y: -1.0513825, z: -0.4174099}
 --- !u!65 &65163351309891234
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -4647,7 +4647,7 @@ MonoBehaviour:
   RoomLeft: {fileID: 0}
   RoomRight: {fileID: 1699503738463856, guid: e348c1c41ab30fc40a5edf42ea4890c7, type: 2}
   RoomFront: {fileID: 1245935803276052, guid: f517fe932dc4b4e44b0cd8334a033c47, type: 2}
-  RoomBack: {fileID: 1546702331630298, guid: dc0358d96a582e84787520508edcb927, type: 2}
+  RoomBack: {fileID: 1546702331630298, guid: ea02a77223622554eb06be0dae60658f, type: 2}
   PorteFront: {fileID: 114825120689787952}
   PorteRight: {fileID: 0}
   PorteBack: {fileID: 114563532190946586}
