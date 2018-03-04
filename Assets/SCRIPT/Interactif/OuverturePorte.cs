@@ -10,6 +10,8 @@ public class OuverturePorte : MonoBehaviour, IActivable {
 
     private AudioSource audioSource;
 
+    public bool IsStuck;
+
     protected bool IsOpen;
 
 	void Start()
@@ -22,14 +24,14 @@ public class OuverturePorte : MonoBehaviour, IActivable {
 
 	public void Activate()
 	{
-		if (!IsOpen) {
-			OpenDoor();
+		if (!IsOpen && !IsStuck) {
+            OpenDoor();
             if(porteVoisine!= null)
                  porteVoisine.OpenDoor();
 		} 
 	}
 
-	public void Highlight()
+    public void Highlight()
 	{
 		
 	}
@@ -47,13 +49,11 @@ public class OuverturePorte : MonoBehaviour, IActivable {
 	public void CloseDoor()
 	{
         audioSource.PlayOneShot(OuvertureEtFermeture);
-        Debug.Log("Closing");
         IsOpen = false;
         GetComponent<Animator> ().SetBool ("isOpen", false);
 		GetComponent<BoxCollider> ().isTrigger = false;
         if (loader.isInTheRoom)
         {
-            Debug.Log("Loading");
             loader.LoadRooms();            
         }
 	}
