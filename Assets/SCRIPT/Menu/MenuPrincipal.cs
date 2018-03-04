@@ -29,6 +29,10 @@ public class MenuPrincipal : MonoBehaviour
     [HideInInspector]
     public bool CursorActif;
 
+    [Header("AudioSource qui sera le petit bruit au changement de bouton :")]
+    public AudioSource AudioTic;
+    public AudioClip TicSound;
+
     void Awake()
     {
         CursorActif = false;
@@ -58,6 +62,9 @@ public class MenuPrincipal : MonoBehaviour
 
     private void ActiveBouton(int compteur)
     {
+        // Jous le son "Tic"
+        AudioTic.PlayOneShot(TicSound);
+
         int Taille = BoutonMenuPrincipal.Length;
 
         for (int i = 0; i < Taille; i++)
@@ -75,11 +82,15 @@ public class MenuPrincipal : MonoBehaviour
         {
             BoutonSelectionner++;
             BoutonSelectionner = CheckConteur(BoutonSelectionner);
+            // Jous le son "Tic"
+            AudioTic.PlayOneShot(TicSound);
         }
         else if (Input.GetButtonDown("Horizontal") && Input.GetAxisRaw("Horizontal") < 0 || Input.GetButtonDown("Vertical") && Input.GetAxisRaw("Vertical") > 0)
         {
             BoutonSelectionner--;
             BoutonSelectionner = CheckConteur(BoutonSelectionner);
+            // Jous le son "Tic"
+            AudioTic.PlayOneShot(TicSound);
         }
         // Check quel bouton doit être activé et les autre se désactive
         CheckBoutonSelectionner(BoutonSelectionner);
@@ -132,6 +143,8 @@ public class MenuPrincipal : MonoBehaviour
 
     private void RetourMenuPrincipal()
     {
+        // Jous le son "Tic"
+        AudioTic.PlayOneShot(TicSound);
         AfficheControleEnCour = false;
         AffichePanelMenuPrincipal.SetActive(true);
         AffichePanelControle.SetActive(false);
