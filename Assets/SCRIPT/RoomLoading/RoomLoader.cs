@@ -39,7 +39,7 @@ public class RoomLoader : MonoBehaviour {
 
     public bool isInTheRoom = false;
 
-    protected Direction orientation;
+    public Direction orientation;
     
 
     public enum Direction
@@ -74,8 +74,10 @@ public class RoomLoader : MonoBehaviour {
         if (EnnemisManger.CloneCreer)
                 EnnemisManger.conteurSalle--;
         
-        if (!Loaded) {   
-            switch ((int)transform.eulerAngles.y / 90 % 4)
+        if (!Loaded) {
+            
+            Debug.Log((int)transform.eulerAngles.y + " -> " + (int)transform.eulerAngles.y / 90);
+            switch ((int)(Mathf.Round((float)transform.eulerAngles.y / 90f) % 4))
             {
                 case 0: orientation = Direction.Front; break;
                 case 1: orientation = Direction.Right; break;

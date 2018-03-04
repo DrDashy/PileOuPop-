@@ -103,6 +103,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4057971320413518}
   - component: {fileID: 95906551155095452}
+  - component: {fileID: 114559067609922094}
+  - component: {fileID: 65649064448546578}
   m_Layer: 0
   m_Name: door
   m_TagString: Untagged
@@ -1171,8 +1173,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4442413154129376}
+  - component: {fileID: 65145573955874344}
+  - component: {fileID: 114214924819009586}
   m_Layer: 0
-  m_Name: SALLE10
+  m_Name: SALLE2A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6381,6 +6385,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65145573955874344
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1546702331630298}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 23.376377, y: 9.66118, z: 18.860731}
+  m_Center: {x: 0.17845917, y: -1.0445886, z: -0.31070232}
 --- !u!65 &65155103669411524
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -6537,6 +6553,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65649064448546578
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1040211379893682}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.385017, y: 7.6660028, z: 1.480746}
+  m_Center: {x: -0.354559, y: 3.3330011, z: -0.24037288}
 --- !u!65 &65744707690945486
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -6795,7 +6823,7 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1040211379893682}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 2c4ec2a32debc1e4a8a934149656dee7, type: 3}
   m_Controller: {fileID: 9100000, guid: 76d7399e84a06184488080f515a3b2a6, type: 2}
   m_CullingMode: 1
@@ -7326,6 +7354,40 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114214924819009586
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1546702331630298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfe2e3bf7d3af4f4bab875dcce48103c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RoomLeft: {fileID: 1102399119587160, guid: bdfbd8626a5af0342a66930a3c9b1721, type: 2}
+  RoomRight: {fileID: 1457704949644216, guid: af2f325c1ab185e4c92c32045a6f58d4, type: 2}
+  RoomFront: {fileID: 0}
+  RoomBack: {fileID: 0}
+  PorteFront: {fileID: 114408249166686658}
+  PorteRight: {fileID: 114506471504579864}
+  PorteBack: {fileID: 114559067609922094}
+  PorteLeft: {fileID: 114568693118891202}
+  CloneLeft: {fileID: 0}
+  CloneRight: {fileID: 0}
+  CloneFront: {fileID: 0}
+  CloneBack: {fileID: 0}
+  PlacementLeft: {x: -24.23, y: 0.000096798, z: 1.4632}
+  PlacementRight: {x: 25.33, y: -0.00000047684, z: 0.61923}
+  PlacementFront: {x: 0, y: 0, z: 0}
+  PlacementBack: {x: 0, y: 0, z: 0}
+  leftDirection: 1
+  rightDirection: 3
+  frontDirection: 0
+  backDirection: 0
+  PreviousRoom: {fileID: 0}
+  EnnemisManger: {fileID: 0}
+  isInTheRoom: 0
 --- !u!114 &114408249166686658
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7338,7 +7400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   porteVoisine: {fileID: 0}
-  loader: {fileID: 0}
+  loader: {fileID: 114214924819009586}
 --- !u!114 &114506471504579864
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7351,7 +7413,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   porteVoisine: {fileID: 0}
-  loader: {fileID: 0}
+  loader: {fileID: 114214924819009586}
+--- !u!114 &114559067609922094
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1040211379893682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 519b2ac874db42d489533fb5148cdd9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  porteVoisine: {fileID: 0}
+  loader: {fileID: 114214924819009586}
 --- !u!114 &114568693118891202
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7364,7 +7439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   porteVoisine: {fileID: 0}
-  loader: {fileID: 0}
+  loader: {fileID: 114214924819009586}
 --- !u!137 &137034246181947962
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

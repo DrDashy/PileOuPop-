@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 95359210568340824}
   - component: {fileID: 65913972530265152}
   - component: {fileID: 114563532190946586}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: doorenter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -356,7 +356,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4484304614689090}
   - component: {fileID: 137280325957277200}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -551,7 +551,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4834913425434262}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bone.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -700,7 +700,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4567555826402978}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bone_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -914,7 +914,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4962912734923074}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -947,7 +947,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4223655036001866}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1163,7 +1163,7 @@ GameObject:
   - component: {fileID: 4970753116717102}
   - component: {fileID: 33681533251928420}
   - component: {fileID: 23714394795244212}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1226,7 +1226,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4425159677530332}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bone.001_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4010,8 +4010,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 6.003317, y: 7.7731323, z: 1.4599657}
+  m_Center: {x: -0.15365005, y: 3.3865657, z: -0.22998253}
 --- !u!65 &65979350298574002
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -4048,7 +4048,7 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1027901941857040}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 2c4ec2a32debc1e4a8a934149656dee7, type: 3}
   m_Controller: {fileID: 9100000, guid: 76d7399e84a06184488080f515a3b2a6, type: 2}
   m_CullingMode: 1
@@ -4385,7 +4385,7 @@ MonoBehaviour:
   RoomLeft: {fileID: 0}
   RoomRight: {fileID: 1699503738463856, guid: e348c1c41ab30fc40a5edf42ea4890c7, type: 2}
   RoomFront: {fileID: 1245935803276052, guid: f517fe932dc4b4e44b0cd8334a033c47, type: 2}
-  RoomBack: {fileID: 0}
+  RoomBack: {fileID: 1546702331630298, guid: ea02a77223622554eb06be0dae60658f, type: 2}
   PorteFront: {fileID: 114825120689787952}
   PorteRight: {fileID: 0}
   PorteBack: {fileID: 114563532190946586}
@@ -4397,14 +4397,15 @@ MonoBehaviour:
   PlacementLeft: {x: 0, y: 0, z: 0}
   PlacementRight: {x: 22.22, y: -0.1, z: -0.28973}
   PlacementFront: {x: -0.11714, y: 0.0048685, z: 23}
-  PlacementBack: {x: 0, y: 0, z: 0}
+  PlacementBack: {x: 0.18, y: -0.1, z: -23.84}
   leftDirection: 0
   rightDirection: 3
   frontDirection: 2
-  backDirection: 0
+  backDirection: 2
   PreviousRoom: {fileID: 0}
   EnnemisManger: {fileID: 0}
   isInTheRoom: 0
+  orientation: 0
 --- !u!137 &137280325957277200
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
