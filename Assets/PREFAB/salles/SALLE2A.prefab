@@ -1172,7 +1172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4442413154129376}
   m_Layer: 0
-  m_Name: SALLE10
+  m_Name: SALLE2A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -35,7 +35,8 @@ public class RoomLoader : MonoBehaviour {
 
     public GameObject PreviousRoom;
 
-    public EnnemisManagerSpawn EnnemisManger;
+    private GameObject EnnemisManager;
+    private EnnemisManagerSpawn ScriptEnnemisManger;
 
     public bool isInTheRoom = false;
 
@@ -51,7 +52,17 @@ public class RoomLoader : MonoBehaviour {
     }
 
     protected bool Loaded = false;
-   
+
+
+    private void Start()
+    {
+        EnnemisManager = GameObject.FindGameObjectWithTag("EnnemisManager");
+        if (!EnnemisManager)
+            Debug.Log(EnnemisManager);
+        ScriptEnnemisManger = EnnemisManager.GetComponent<EnnemisManagerSpawn>();
+        if (!ScriptEnnemisManger)
+            Debug.Log(ScriptEnnemisManger);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -70,9 +81,9 @@ public class RoomLoader : MonoBehaviour {
 
     public void LoadRooms()
     {
-        if(EnnemisManger != null)
-        if (EnnemisManger.CloneCreer)
-                EnnemisManger.conteurSalle--;
+        if(EnnemisManager)
+            if(ScriptEnnemisManger.CloneCreer)
+                ScriptEnnemisManger.conteurSalle--;
         
         if (!Loaded) {   
             switch ((int)transform.eulerAngles.y / 90 % 4)

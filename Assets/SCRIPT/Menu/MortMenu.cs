@@ -20,6 +20,9 @@ public class MortMenu : MonoBehaviour
     [Header("Texte bouton :")]
     public Image[] TexteBoutton;
 
+    [Header("Surlignage bouton :")]
+    public Image[] SurlignageBoutton;
+
     [Header("Nom de la fonction qu'activera chaque bouton :")]
     public string[] NomFonction;
     private int BoutonSelectionner;
@@ -123,9 +126,11 @@ public class MortMenu : MonoBehaviour
             {
                 BoutonMenuMort[i].Select();
                 TexteBoutton[i].color = new Color32(0, 33, 255, 255);
+                SurlignageBoutton[i].enabled = true;
             } else
             {
                 TexteBoutton[i].color = new Color32(255, 255, 255, 255);
+                SurlignageBoutton[i].enabled = false;
             }
         }
     }

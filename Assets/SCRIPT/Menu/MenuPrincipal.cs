@@ -39,6 +39,7 @@ public class MenuPrincipal : MonoBehaviour
 
     void Awake()
     {
+        AudioListener.pause = false;
         CursorActif = false;
         AffichePanelMenuPrincipal.SetActive(true);
         AffichePanelControle.SetActive(false);
