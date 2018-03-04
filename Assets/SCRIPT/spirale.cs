@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class spirale : MonoBehaviour {
-
+	public float speed = 20;
 	// Use this for initialization
 	void Start () {
 		
@@ -11,6 +11,6 @@ public class spirale : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.Rotate (Vector3.back * 20 * Time.deltaTime, Space.Self);
+		transform.Rotate (Vector3.back * speed * Time.deltaTime, Space.Self);
 	}
 }

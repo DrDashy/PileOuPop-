@@ -752,7 +752,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1506557406684742}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -10.328569, y: 0, z: -7.543638}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4898303314355000}
@@ -969,7 +969,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1822649039926014}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.17857, y: -2.306428, z: 3.6736383}
+  m_LocalPosition: {x: 5.85, y: -2.306428, z: -3.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4748777877317472}
@@ -1925,6 +1925,7 @@ MonoBehaviour:
   frontDirection: 1
   backDirection: 0
   PreviousRoom: {fileID: 0}
+  EnnemisManger: {fileID: 0}
   isInTheRoom: 0
 --- !u!137 &137294500765813400
 SkinnedMeshRenderer:
