@@ -7,7 +7,7 @@ public class SpaceTimeMachine : MonoBehaviour, IActivable {
 	public Material highlightMaterial;
 	public RoomLoader loader;
 	public GameObject nextroom;
-
+	public GameObject Tuyaud;
 	protected MeshRenderer meshRend;
 	protected Material[] initialMaterial;
 	protected bool IsPuched;
@@ -33,6 +33,7 @@ public class SpaceTimeMachine : MonoBehaviour, IActivable {
 			loader.RoomBack = nextroom;
 			loader.PlacementBack = new Vector3 (1.04f, -6.9141e-05f, -23.7f);
 			loader.LoadRooms ();
+			Tuyaud.GetComponent<madMachine> ().CanDegenerate = true;
 		}
 	}
 
