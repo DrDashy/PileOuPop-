@@ -7914,7 +7914,7 @@ MonoBehaviour:
   RoomLeft: {fileID: 1102399119587160, guid: bdfbd8626a5af0342a66930a3c9b1721, type: 2}
   RoomRight: {fileID: 1457704949644216, guid: af2f325c1ab185e4c92c32045a6f58d4, type: 2}
   RoomFront: {fileID: 1673587495014318, guid: 64d767924aeecb646a1503d76a76cbd2, type: 2}
-  RoomBack: {fileID: 0}
+  RoomBack: {fileID: 1868572143505610, guid: 5a04b6f1c26eaa54aa71421fea794e8f, type: 2}
   PorteFront: {fileID: 114408249166686658}
   PorteRight: {fileID: 114506471504579864}
   PorteBack: {fileID: 114559067609922094}
@@ -7926,11 +7926,11 @@ MonoBehaviour:
   PlacementLeft: {x: -24.23, y: 0.000096798, z: 1.4632}
   PlacementRight: {x: 25.33, y: -0.00000047684, z: 0.61923}
   PlacementFront: {x: -0.2, y: 0, z: 22.54}
-  PlacementBack: {x: 0, y: 0, z: 0}
+  PlacementBack: {x: -1, y: 0.1, z: -23.59}
   leftDirection: 1
   rightDirection: 3
   frontDirection: 2
-  backDirection: 0
+  backDirection: 1
   PreviousRoom: {fileID: 0}
   isInTheRoom: 0
   orientation: 0
