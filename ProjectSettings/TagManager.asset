@@ -8,6 +8,7 @@ TagManager:
   - MenuMort
   - MenuPause
   - EnnemisManager
+  - InteractionManager
   layers:
   - Default
   - TransparentFX
