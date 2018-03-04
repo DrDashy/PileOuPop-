@@ -18,18 +18,28 @@ public class EnnemisManagerSpawn : MonoBehaviour {
 
     private GameObject Player;
 
+    private GameObject CloneActuel;
+
     [HideInInspector]
     public bool CloneCreer;
 
     [Header("Nombre de salle avant dispawn :")]
     public int conteurSalle;
 
+    private int OriginConteurSalle;
+
     // Use this for initialization
     void Start () {
-        conteurSalle = 0;
+        OriginConteurSalle = conteurSalle;
         CloneCreer = false;
         Player = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(WaitToSpawnPoursuivant());
+    }
+
+    private void Update()
+    {
+        if (CloneCreer)
+            CheckCloneRoomEnter(CloneActuel);
     }
 
     private void SpawnPoursuivant()
@@ -38,7 +48,8 @@ public class EnnemisManagerSpawn : MonoBehaviour {
         float rand = Random.Range(-Mathf.PI, Mathf.PI);
         clone.transform.position = Player.transform.position + new Vector3(Mathf.Cos(rand)*Distance, 1.4f, Mathf.Sin(rand) * Distance);
         CloneCreer = true;
-        CheckCloneRoomEnter(clone);
+        CloneActuel = clone;
+        conteurSalle = OriginConteurSalle;
     }
 
     private void CheckCloneRoomEnter(GameObject clone)

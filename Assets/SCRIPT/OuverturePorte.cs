@@ -49,10 +49,9 @@ public class OuverturePorte : MonoBehaviour, IActivable {
             Debug.Log("Loading");
             loader.LoadRooms();            
         }
-            
 	}
 
-	public void OnTriggerExit()
+    public void OnTriggerExit()
 	{
         Debug.Log("Quit coolider door");
         CloseDoor();
